@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+
+# Berisi IP & MAC internal jaringan kampus. Jangan di-push ke repo publik.
+RuckusAPList.csv
