@@ -33,6 +33,7 @@ KANAL = [36, 40, 44, 48, 149, 153, 157, 161]  # non-DFS 20 MHz (UNII-1 + UNII-3)
 DFS = [52, 56, 60, 64]  # UNII-2: diizinkan (5250-5350 MHz, dalam ruangan) tetapi wajib DFS
 KANAL_DFS = KANAL + DFS
 BOBOT_DFS = 3  # penalti per AP di kanal DFS: dipakai hanya bila mengurangi interferensi cukup banyak
+BOBOT_UBAH = 1  # penalti per AP lama yang kanalnya diganti
 WARNA_KANAL = {36: "#1f77b4", 40: "#17becf", 44: "#2ca02c", 48: "#98df8a",
                52: "#e377c2", 56: "#f7b6d2", 60: "#bcbd22", 64: "#dbdb8d",
                149: "#9467bd", 153: "#d62728", 157: "#ff7f0e", 161: "#8c564b"}
@@ -40,18 +41,23 @@ DENGAR = -85  # radio di kanal sama >= ini dihitung sebagai CCI (sama dengan ana
 
 # AP lantai 4 (radio 5 GHz SSID WiFi-UB.x). x/y None = pakai estimasi dari data.
 AP = [
-    ("M1", "c0:c7:0a:98:3a:52", "F4.4", 940, 350),
-    ("M2", "c0:c7:0a:98:34:d1", "F4.6 / kanan-atas", None, None),
-    ("M3", "c0:c7:0a:98:38:b1", "koridor bawah (F4.3/F4.5)", None, None),
-    ("M4", "c0:c7:0a:98:34:11", "F4.1", None, None),
-    ("E1", "c8:a6:08:8b:3e:01", "Ext F4.14", 179, 329),
-    ("E2", "c0:c7:0a:98:3a:c1", "Ext F4.10", 467, 329),
-    ("E3", "c8:a6:08:8b:1e:a1", "Ext F4.13", 179, 591),
-    ("E4", "28:b3:71:ab:d3:91", "Ext F4.9", 467, 591),
+    ("AP-F4.4", "c0:c7:0a:98:3a:52", "di dalam F4.4", 940, 350),
+    ("AP-F4.6", "c0:c7:0a:98:34:d1", "estimasi, pojok kanan-atas dekat F4.6", None, None),
+    ("AP-F4.3", "c0:c7:0a:98:38:b1", "di dalam F4.3, di atas pintu", None, None),
+    ("AP-F4.1", "c0:c7:0a:98:34:11", "estimasi, dekat pintu F4.1", None, None),
+    ("AP-F4.14", "c8:a6:08:8b:3e:01", "Ext F4.14", 179, 329),
+    ("AP-F4.10", "c0:c7:0a:98:3a:c1", "Ext F4.10", 467, 329),
+    ("AP-F4.13", "c8:a6:08:8b:1e:a1", "Ext F4.13", 179, 591),
+    ("AP-F4.9", "28:b3:71:ab:d3:91", "Ext F4.9", 467, 591),
 ]
 # Usulan
-AP_BARU = [("N1", "F4.2 (kiri-atas)", 796, 330), ("N2", "F4.8 (kanan-atas)", 960, 190)]
-TURUN_DAYA = {"E1": 6.0}  # dB
+AP_BARU = [("AP-F4.2", "F4.2 (kiri-atas)", 796, 330), ("AP-F4.5", "F4.5", 1084, 540)]
+UTAMA = {"AP-F4.1", "AP-F4.3", "AP-F4.4", "AP-F4.6"}  # AP lama di gedung utama
+TURUN_DAYA = {"AP-F4.14": 6.0}  # dB
+# rencana kanal simulasi versi awal (Document/Lantai4-wifi-analysis (2).pptx, AP 1-10), dipetakan ke nama AP kita.
+# Versi akhir simulasi (3) sudah memakai rencana kanal usulan, jadi baris ini hanya pembanding historis.
+KANAL_SIMULASI = {"AP-F4.14": 60, "AP-F4.10": 157, "AP-F4.13": 40, "AP-F4.9": 153, "AP-F4.4": 36,
+                  "AP-F4.1": 44, "AP-F4.6": 64, "AP-F4.3": 149, "AP-F4.2": 161, "AP-F4.5": 48}
 
 
 def muat():
@@ -141,25 +147,27 @@ def evaluasi(plan, cov, dengar, rssi_asing, kanal_asing):
     return dict(cci=cci, overlap=overlap, dfs=dfs, detail=detail)
 
 
-def skor(e):
-    return e["cci"] + e["overlap"] + BOBOT_DFS * e["dfs"]
+def skor(e, plan=None, lama=None):
+    """cci + overlap + penalti DFS + penalti tiap AP lama yang kanalnya diganti (perubahan seperlunya)."""
+    ubah = sum(1 for k, c in (lama or {}).items() if plan and plan.get(k) != c)
+    return e["cci"] + e["overlap"] + BOBOT_DFS * e["dfs"] + BOBOT_UBAH * ubah
 
 
-def cari_rencana(cov, dengar, rssi_asing, kanal_asing, awal, kanal, ulang=30):
+def cari_rencana(cov, dengar, rssi_asing, kanal_asing, awal, kanal, ulang=30, lama=None):
     """Local search (ganti kanal satu AP per langkah sampai tidak ada perbaikan), diulang dari
     beberapa titik awal acak; ambil skor terkecil. Skor = cci + overlap + BOBOT_DFS x jumlah AP DFS."""
     rng = np.random.default_rng(0)
     terbaik_plan, terbaik = None, None
     for u in range(ulang):
         plan = dict(awal) if u == 0 else {k: int(rng.choice(kanal)) for k in awal}
-        nilai = skor(evaluasi(plan, cov, dengar, rssi_asing, kanal_asing))
+        nilai = skor(evaluasi(plan, cov, dengar, rssi_asing, kanal_asing), plan, lama)
         while True:
             maju = False
             for k, ch in itertools.product(list(plan), kanal):
                 if plan[k] == ch:
                     continue
                 coba = dict(plan, **{k: ch})
-                v = skor(evaluasi(coba, cov, dengar, rssi_asing, kanal_asing))
+                v = skor(evaluasi(coba, cov, dengar, rssi_asing, kanal_asing), coba, lama)
                 if v < nilai:
                     plan, nilai, maju = coba, v, True
             if not maju:
@@ -252,11 +260,13 @@ def main():
     for k, a in ap.iterrows():
         ax.scatter(a.x, a.y, marker="^", s=260, c=[warna_ap[k]], edgecolors="black", linewidths=1.5, zorder=6)
         n_titik = int((pel == k).sum())
-        ax.annotate("%s - %s\nch %d | %d titik dilayani" % (k, a.ruang, plan_kini[k], n_titik), (a.x, a.y),
-                    xytext=(10, 8), textcoords="offset points", fontsize=8, zorder=7,
+        est_txt = " (posisi estimasi)" if "estimasi" in str(a.ruang) else ""
+        ax.annotate("%s%s\nch %d | %d titik dilayani" % (k, est_txt, plan_kini[k], n_titik), (a.x, a.y),
+                    xytext=(10, -40) if k == "AP-F4.3" else (10, 8), textcoords="offset points", fontsize=8, zorder=7,
                     bbox=dict(boxstyle="round,pad=0.25", fc="white", ec=warna_ap[k], alpha=0.92))
     ax.set_title("Lantai 4 - Posisi AP dan area layanan (titik diwarnai sesuai AP terkuat; garis = titik -> AP pelayan)\n"
-                 "Ext: posisi hasil pemetaan di bawah AP. Gedung utama: posisi estimasi dari 3 titik terkuat.", fontsize=11)
+                 "Posisi dari pemetaan di bawah AP / pengamatan lapangan, kecuali yang ditandai 'posisi estimasi' (dari 3 titik terkuat).",
+                 fontsize=11)
     if (pel == "lain").any():
         ax.annotate("dilayani AP lain:\n" + ", ".join(pel[pel == "lain"].index), (0.01, 0.02), xycoords="axes fraction", fontsize=8)
     batas(ax, w, h)
@@ -317,8 +327,8 @@ def main():
 
     # ---------- model + solusi ----------
     P, n, rmse = pasang_model(rssi, xy, ap)
-    P_baru = float(np.median([P[k] for k in ap.index if k.startswith("M")]))
-    PLAFON = float(max(rssi_ap[k].max() for k in ap.index if k.startswith("M")))
+    P_baru = float(np.median([P[k] for k in ap.index if k in UTAMA]))
+    PLAFON = float(max(rssi_ap[k].max() for k in ap.index if k in UTAMA))
     ap_s = pd.concat([ap, pd.DataFrame([dict(kode=k, radio="", ruang=r, x=float(x), y=float(y)) for k, r, x, y in AP_BARU]).set_index("kode")])
     P_s = dict(P, **{k: P_baru for k, *_ in AP_BARU})
     for k, db in TURUN_DAYA.items():
@@ -335,8 +345,8 @@ def main():
         rssi_s[k] = np.minimum(P_baru - 10 * n * np.log10(d), PLAFON).reindex(rssi_s.index)
         dengar_s[k] = rssi_s[k]
     awal = dict(plan_kini, **{k: KANAL[0] for k, *_ in AP_BARU})
-    plan_nd = cari_rencana(rssi_s, dengar_s, rssi_asing, kanal_asing, awal, KANAL)
-    plan_s = cari_rencana(rssi_s, dengar_s, rssi_asing, kanal_asing, awal, KANAL_DFS)
+    plan_nd = cari_rencana(rssi_s, dengar_s, rssi_asing, kanal_asing, awal, KANAL, lama=plan_kini)
+    plan_s = cari_rencana(rssi_s, dengar_s, rssi_asing, kanal_asing, awal, KANAL_DFS, lama=plan_kini)
     ev_nd = evaluasi(plan_nd, rssi_s, dengar_s, rssi_asing, kanal_asing)
     ev_s = evaluasi(plan_s, rssi_s, dengar_s, rssi_asing, kanal_asing)
     # pembanding: kanal lama dipertahankan, hanya tambah AP (kanal AP baru dipilih terbaik)
@@ -344,6 +354,7 @@ def main():
     plan_tetap = min((dict(plan_kini, **dict(zip(baru_k, c))) for c in itertools.product(KANAL, repeat=len(baru_k))),
                      key=lambda pl: skor(evaluasi(pl, rssi_s, dengar_s, rssi_asing, kanal_asing)))
     ev_tetap = evaluasi(plan_tetap, rssi_s, dengar_s, rssi_asing, kanal_asing)
+    ev_sim = evaluasi(KANAL_SIMULASI, rssi_s, dengar_s, rssi_asing, kanal_asing)
     cci_s, det_s = ev_s["cci"], ev_s["detail"]
     rssi1_s = rssi_s.max(axis=1)
 
@@ -363,7 +374,7 @@ def main():
         ax.scatter(a.x, a.y, marker="*" if baru else "^", s=520 if baru else 230, c=WARNA_KANAL[ch1],
                    edgecolors="black", linewidths=1.5, zorder=6)
         if baru:
-            teks = "%s BARU - %s\nch %d" % (k, a.ruang, ch1)
+            teks = "%s (BARU)\nch %d" % (k, ch1)
         elif ch0 != ch1:
             teks = "%s ch %d -> %d" % (k, ch0, ch1)
         else:
@@ -376,7 +387,7 @@ def main():
             ax.annotate("sinyal %s bocor sampai 007 (%.0f dBm)" % (k, b.rssi1), ((a.x + b.x_px) / 2, (a.y + b.y_px) / 2),
                         xytext=(0, -14), textcoords="offset points", ha="center", fontsize=8, color="#d35400",
                         weight="bold", zorder=7, bbox=dict(fc="white", ec="none", alpha=0.8))
-        ax.annotate(teks, (a.x, a.y), xytext=(14, -34) if k == "N2" else (10, 8), textcoords="offset points", fontsize=8.5,
+        ax.annotate(teks, (a.x, a.y), xytext=(10, 8), textcoords="offset points", fontsize=8.5,
                     weight="bold", zorder=7,
                     bbox=dict(boxstyle="round,pad=0.25", fc="#fff8dc" if baru else "white", ec=WARNA_KANAL[ch1], lw=1.5))
     ax.set_title("Lantai 4 - Usulan solusi: 2 AP tambahan, rencana kanal baru, penurunan daya AP Ext F4.14", fontsize=12)
@@ -393,29 +404,30 @@ def main():
     teks = [
         "USULAN SOLUSI LANTAI 4",
         "",
-        "1. Tambah 2 AP (ceiling mount, 20 MHz)",
-        "   N1 di %s -> ch %d" % (AP_BARU[0][1], plan_s["N1"]),
+        "1. Tambah 2 AP (ceiling mount, 20 MHz):",
+        "   1 AP per ruang kuliah F4.1-F4.6",
+        "   AP-F4.2 (baru) -> ch %d" % plan_s["AP-F4.2"],
         "      menutup 005/006/007/008 (-59..-69 dBm,",
         "      007 sekarang dilayani AP Ext, loss 5%)",
-        "   N2 di %s -> ch %d" % (AP_BARU[1][1], plan_s["N2"]),
-        "      menutup F4.8: 003/203 (-59/-63 dBm,",
-        "      jitter 97 ms, loss 5%)",
+        "   AP-F4.5 (baru) -> ch %d" % plan_s["AP-F4.5"],
+        "      kapasitas: F4.3 + F4.5 sekarang dilayani",
+        "      AP-F4.3 saja (126% beban skenario berat)",
         "",
         "2. Rencana kanal baru (semua 20 MHz)",
         *["   " + u for u in ubah],
-        "   tetap: " + ", ".join(tetap),
-        "   2 AP di kanal DFS (%s)" % ", ".join("%s=%d" % (k, c) for k, c in plan_s.items() if c in DFS),
+        *(["   tetap: " + ", ".join(tetap)] if tetap else []),
+        "   %d AP di kanal DFS (%s)" % (sum(c in DFS for c in plan_s.values()), ", ".join("%s=%d" % (k, c) for k, c in plan_s.items() if c in DFS)),
         "   CCI (metode analyze): %d -> %d" % (cci_kini, cci_s),
         "   titik tumpang tindih AP sekanal: %d -> %d" % (ev_kini["overlap"], ev_s["overlap"]),
         "   (tanpa DFS: CCI %d, tumpang tindih %d," % (ev_nd["cci"], ev_nd["overlap"]),
         "    karena 10 AP > 8 kanal non-DFS)",
         "",
-        "3. Turunkan Tx power E1 (Ext F4.14) %.0f dB" % TURUN_DAYA["E1"],
+        "3. Turunkan Tx power AP-F4.14 %.0f dB" % TURUN_DAYA["AP-F4.14"],
         "   -34 dBm di 101, terdengar sampai 007,",
         "   CCI 3-6 radio di 101/102/206",
         "",
         "4. Aktifkan 802.11k/v + min-RSSI ~ -72 dBm",
-        "   R2: ping-pong M3<->E2 dalam 10 dtk",
+        "   R2: ping-pong AP-F4.3<->AP-F4.10",
         "   dan putus 1 dtk di Ext",
         "",
         "5. Hall (000): CCI 6 -> %d dengan rencana" % det_s["L4-000"],
@@ -474,14 +486,15 @@ def main():
     print("Model: n=%.2f RMSE=%.1f dB | P AP baru=%.1f" % (n, rmse, P_baru))
     print("Kanal sekarang:", plan_kini)
     print("Kanal usulan  :", plan_s)
-    for nama, pl, ev in (("sekarang (8 AP)", plan_kini, ev_kini), ("+2 AP, kanal lama", plan_tetap, ev_tetap),
-                         ("+2 AP, kanal baru non-DFS", plan_nd, ev_nd), ("+2 AP, kanal baru + DFS", plan_s, ev_s)):
+    opsi = (("sekarang (8 AP)", plan_kini, ev_kini), ("+2 AP, kanal lama", plan_tetap, ev_tetap),
+            ("+2 AP, kanal baru non-DFS", plan_nd, ev_nd), ("+2 AP, kanal baru + DFS", plan_s, ev_s),
+            ("+2 AP, kanal dari simulasi", KANAL_SIMULASI, ev_sim))
+    for nama, pl, ev in opsi:
         print("%-28s cci=%3d overlap=%3d dfs=%d  %s" % (nama, ev["cci"], ev["overlap"], ev["dfs"], pl))
     pd.DataFrame([dict(opsi=nama, cci_metode_analyze=ev["cci"], overlap_ap_sekanal=ev["overlap"], ap_di_dfs=ev["dfs"],
                        kanal=" ".join("%s:%d" % kv for kv in pl.items()))
-                  for nama, pl, ev in (("sekarang (8 AP)", plan_kini, ev_kini), ("+2 AP, kanal lama", plan_tetap, ev_tetap),
-                                       ("+2 AP, kanal baru non-DFS", plan_nd, ev_nd), ("+2 AP, kanal baru + DFS", plan_s, ev_s))]
-                 ).to_csv(os.path.join(OUT, "opsi_kanal_L4.csv"), index=False)
+                  for nama, pl, ev in opsi]).to_csv(os.path.join(OUT, "opsi_kanal_L4.csv"), index=False)
+    print("CCI per titik, kanal simulasi:", {k: v for k, v in ev_sim["detail"].items() if v})
     print("RSSI >= -67: %.0f%% -> %.0f%% | min %.1f -> %.1f" % (100 * (t.rssi1 >= -67).mean(), 100 * (rssi1_s >= -67).mean(),
                                                                t.rssi1.min(), rssi1_s.min()))
     print(banding.loc[["L4-005", "L4-006", "L4-007", "L4-008", "L4-003", "L4-203", "L4-000", "L4-101", "L4-102", "L4-206"]])

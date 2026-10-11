@@ -1,0 +1,576 @@
+{
+ "ts": 1791728820,
+ "clients": [
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -59,
+   "snr": 37,
+   "kind": "phone",
+   "since": 1791728764,
+   "rate": 86,
+   "wifi": 5
+  },
+  {
+   "ap": "F10.6-LabMultimedia",
+   "rssi": -37,
+   "snr": 59,
+   "kind": "laptop",
+   "since": 1791705922,
+   "rate": 287,
+   "wifi": 6
+  },
+  {
+   "ap": "F1-Lobby",
+   "rssi": -56,
+   "snr": 40,
+   "kind": "phone",
+   "since": 1791727883,
+   "rate": 86,
+   "wifi": 5
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -39,
+   "snr": 57,
+   "kind": "other",
+   "since": 1791719930,
+   "rate": 130,
+   "wifi": 4
+  },
+  {
+   "ap": "F1-Lobby",
+   "rssi": -57,
+   "snr": 39,
+   "kind": "tablet",
+   "since": 1791706556,
+   "rate": 78,
+   "wifi": 5
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -56,
+   "snr": 40,
+   "kind": "phone",
+   "since": 1791723439,
+   "rate": 258,
+   "wifi": 6
+  },
+  {
+   "ap": "F9.5",
+   "rssi": -53,
+   "snr": 43,
+   "kind": "other",
+   "since": 1791709727,
+   "rate": 6,
+   "wifi": 5
+  },
+  {
+   "ap": "F10.4 (Utara)",
+   "rssi": -46,
+   "snr": 50,
+   "kind": "phone",
+   "since": 1791726360,
+   "rate": 78,
+   "wifi": 5
+  },
+  {
+   "ap": "F11.3",
+   "rssi": -51,
+   "snr": 45,
+   "kind": "phone",
+   "since": 1791522666,
+   "rate": 173,
+   "wifi": 5
+  },
+  {
+   "ap": "F8.1",
+   "rssi": -46,
+   "snr": 50,
+   "kind": "phone",
+   "since": 1791714235,
+   "rate": 173,
+   "wifi": 5
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -39,
+   "snr": 57,
+   "kind": "other",
+   "since": 1791725094,
+   "rate": 258,
+   "wifi": 6
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -59,
+   "snr": 37,
+   "kind": "phone",
+   "since": 1791724458,
+   "rate": 78,
+   "wifi": 5
+  },
+  {
+   "ap": "F10.4 (Utara)",
+   "rssi": -37,
+   "snr": 59,
+   "kind": "other",
+   "since": 1791705922,
+   "rate": 229,
+   "wifi": 6
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -45,
+   "snr": 51,
+   "kind": "phone",
+   "since": 1791723539,
+   "rate": 86,
+   "wifi": 5
+  },
+  {
+   "ap": "F2.Ext-Koridor",
+   "rssi": -59,
+   "snr": 37,
+   "kind": "other",
+   "since": 1791728760,
+   "rate": 78,
+   "wifi": 5
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -58,
+   "snr": 38,
+   "kind": "phone",
+   "since": 1791723100,
+   "rate": 86,
+   "wifi": 5
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -49,
+   "snr": 47,
+   "kind": "phone",
+   "since": 1791725000,
+   "rate": 86,
+   "wifi": 5
+  },
+  {
+   "ap": "F10.6-LabMultimedia",
+   "rssi": -51,
+   "snr": 45,
+   "kind": "laptop",
+   "since": 1791521520,
+   "rate": 258,
+   "wifi": 6
+  },
+  {
+   "ap": "F1-Lobby",
+   "rssi": -56,
+   "snr": 40,
+   "kind": "phone",
+   "since": 1791706562,
+   "rate": 58,
+   "wifi": 5
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -40,
+   "snr": 56,
+   "kind": "phone",
+   "since": null,
+   "rate": 229,
+   "wifi": 6
+  },
+  {
+   "ap": "F10.4 (Utara)",
+   "rssi": -49,
+   "snr": 47,
+   "kind": "other",
+   "since": 1791708794,
+   "rate": 229,
+   "wifi": 6
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -54,
+   "snr": 42,
+   "kind": "phone",
+   "since": 1791720287,
+   "rate": 86,
+   "wifi": 5
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -40,
+   "snr": 56,
+   "kind": "phone",
+   "since": 1791719775,
+   "rate": 86,
+   "wifi": 5
+  },
+  {
+   "ap": "F6-Ext",
+   "rssi": -50,
+   "snr": 46,
+   "kind": "other",
+   "since": 1791725150,
+   "rate": 258,
+   "wifi": 6
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -58,
+   "snr": 38,
+   "kind": "phone",
+   "since": 1791717273,
+   "rate": 78,
+   "wifi": 5
+  },
+  {
+   "ap": "F1-SecurityRoom",
+   "rssi": -62,
+   "snr": 34,
+   "kind": "phone",
+   "since": 1791720678,
+   "rate": 172,
+   "wifi": 6
+  },
+  {
+   "ap": "F1-Ext-Barat",
+   "rssi": -41,
+   "snr": 55,
+   "kind": "other",
+   "since": null,
+   "rate": 86,
+   "wifi": 5
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -43,
+   "snr": 53,
+   "kind": "other",
+   "since": 1791728747,
+   "rate": null,
+   "wifi": 6
+  },
+  {
+   "ap": "F11.3",
+   "rssi": -45,
+   "snr": 51,
+   "kind": "laptop",
+   "since": 1791719629,
+   "rate": 229,
+   "wifi": 6
+  },
+  {
+   "ap": "F1-SecurityRoom",
+   "rssi": -61,
+   "snr": 35,
+   "kind": "other",
+   "since": 1791717198,
+   "rate": 86,
+   "wifi": 5
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -43,
+   "snr": 53,
+   "kind": "other",
+   "since": 1791724845,
+   "rate": 287,
+   "wifi": 6
+  },
+  {
+   "ap": "F1-Ext-Barat",
+   "rssi": -31,
+   "snr": 65,
+   "kind": "other",
+   "since": 1791723104,
+   "rate": 143,
+   "wifi": 6
+  },
+  {
+   "ap": "F1-SecurityRoom",
+   "rssi": -53,
+   "snr": 43,
+   "kind": "phone",
+   "since": 1791717141,
+   "rate": 78,
+   "wifi": 5
+  },
+  {
+   "ap": "F7-Lobby",
+   "rssi": -47,
+   "snr": 49,
+   "kind": "phone",
+   "since": 1791705944,
+   "rate": 129,
+   "wifi": 6
+  },
+  {
+   "ap": "F2.6",
+   "rssi": -82,
+   "snr": 14,
+   "kind": "other",
+   "since": 1791728717,
+   "rate": 78,
+   "wifi": 5
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -42,
+   "snr": 54,
+   "kind": "laptop",
+   "since": 1791727022,
+   "rate": 156,
+   "wifi": 5
+  },
+  {
+   "ap": "F6-Ext",
+   "rssi": -51,
+   "snr": 45,
+   "kind": "phone",
+   "since": 1791725560,
+   "rate": 104,
+   "wifi": 5
+  },
+  {
+   "ap": "F10.6-LabMultimedia",
+   "rssi": -43,
+   "snr": 53,
+   "kind": "phone",
+   "since": 1791707565,
+   "rate": 130,
+   "wifi": 5
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -52,
+   "snr": 44,
+   "kind": "phone",
+   "since": 1791726329,
+   "rate": 173,
+   "wifi": 5
+  },
+  {
+   "ap": "F10.6-LabMultimedia",
+   "rssi": -55,
+   "snr": 41,
+   "kind": "other",
+   "since": 1791728219,
+   "rate": 78,
+   "wifi": 5
+  },
+  {
+   "ap": "F1-SecurityRoom",
+   "rssi": -65,
+   "snr": 31,
+   "kind": "laptop",
+   "since": 1791719861,
+   "rate": 65,
+   "wifi": 5
+  },
+  {
+   "ap": "F10.6-LabMultimedia",
+   "rssi": -53,
+   "snr": 43,
+   "kind": "other",
+   "since": null,
+   "rate": 206,
+   "wifi": 6
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -49,
+   "snr": 47,
+   "kind": "phone",
+   "since": 1791726874,
+   "rate": 115,
+   "wifi": 6
+  },
+  {
+   "ap": "F1-Lobby",
+   "rssi": -66,
+   "snr": 30,
+   "kind": "phone",
+   "since": 1791725821,
+   "rate": 86,
+   "wifi": 5
+  },
+  {
+   "ap": "F7-Ext",
+   "rssi": -53,
+   "snr": 43,
+   "kind": "other",
+   "since": 1791705937,
+   "rate": 78,
+   "wifi": 5
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -44,
+   "snr": 52,
+   "kind": "phone",
+   "since": 1791725003,
+   "rate": 86,
+   "wifi": 5
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -44,
+   "snr": 52,
+   "kind": "phone",
+   "since": 1791725943,
+   "rate": 258,
+   "wifi": 6
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -39,
+   "snr": 57,
+   "kind": "phone",
+   "since": 1791726874,
+   "rate": 172,
+   "wifi": 6
+  },
+  {
+   "ap": "F10.6-LabMultimedia",
+   "rssi": -39,
+   "snr": 57,
+   "kind": "other",
+   "since": 1791640218,
+   "rate": 287,
+   "wifi": 6
+  },
+  {
+   "ap": "F9-Timur",
+   "rssi": -48,
+   "snr": 48,
+   "kind": "other",
+   "since": 1791705939,
+   "rate": 287,
+   "wifi": 6
+  },
+  {
+   "ap": "F6.1",
+   "rssi": -48,
+   "snr": 48,
+   "kind": "phone",
+   "since": 1791726693,
+   "rate": 173,
+   "wifi": 5
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -51,
+   "snr": 45,
+   "kind": "other",
+   "since": 1791718119,
+   "rate": 143,
+   "wifi": 6
+  },
+  {
+   "ap": "F10.6-LabMultimedia",
+   "rssi": -44,
+   "snr": 52,
+   "kind": "other",
+   "since": 1791705928,
+   "rate": 229,
+   "wifi": 6
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -53,
+   "snr": 43,
+   "kind": "other",
+   "since": null,
+   "rate": 173,
+   "wifi": 5
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -31,
+   "snr": 65,
+   "kind": "other",
+   "since": 1791712976,
+   "rate": 287,
+   "wifi": 6
+  },
+  {
+   "ap": "F1-Lobby",
+   "rssi": -55,
+   "snr": 41,
+   "kind": "tablet",
+   "since": 1791651761,
+   "rate": 58,
+   "wifi": 5
+  },
+  {
+   "ap": "F9-Timur",
+   "rssi": -54,
+   "snr": 42,
+   "kind": "other",
+   "since": 1791727180,
+   "rate": 155,
+   "wifi": 6
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -41,
+   "snr": 55,
+   "kind": "phone",
+   "since": 1791725025,
+   "rate": 155,
+   "wifi": 6
+  },
+  {
+   "ap": "F4.1",
+   "rssi": -43,
+   "snr": 53,
+   "kind": "other",
+   "since": 1791705986,
+   "rate": 156,
+   "wifi": 5
+  },
+  {
+   "ap": "F1-SecurityRoom",
+   "rssi": -69,
+   "snr": 27,
+   "kind": "other",
+   "since": 1791721574,
+   "rate": 206,
+   "wifi": 6
+  },
+  {
+   "ap": "F10.6-LabMultimedia",
+   "rssi": -38,
+   "snr": 58,
+   "kind": "other",
+   "since": 1791705926,
+   "rate": 287,
+   "wifi": 6
+  },
+  {
+   "ap": "F7-BaratLaut",
+   "rssi": -43,
+   "snr": 53,
+   "kind": "other",
+   "since": 1791728716,
+   "rate": 173,
+   "wifi": 5
+  },
+  {
+   "ap": "F1-Ext-Timur",
+   "rssi": -39,
+   "snr": 57,
+   "kind": "phone",
+   "since": 1791724484,
+   "rate": 287,
+   "wifi": 6
+  }
+ ],
+ "skipped": {
+  "band24": 14,
+  "no_ap": 1
+ }
+}

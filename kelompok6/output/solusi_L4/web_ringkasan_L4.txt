@@ -1,0 +1,4 @@
+Perangkat L4 per jam (rata-rata 7 hari): puncak 304 pukul 10:00; jam 08-16 rata-rata 227
+Airtime sekarang (rata-rata snapshot): AP-F4.6(ch153)=40% [20-53], AP-F4.13(ch153)=38% [24-56], AP-F4.10(ch40)=10% [2-42], AP-F4.1(ch44)=5% [3-6], AP-F4.14(ch157)=3% [1-9], AP-F4.9(ch48)=0% [0-1], AP-F4.3(ch161)=0% [0-1], AP-F4.4(ch36)=0% [0-0]
+Airtime Agustus 2025: F4-Ext-4.13(ch153)=85%/18 klien, F4.6-R650(ch153)=77%/49 klien, F4-Ext-F4.9-R650(ch149)=56%/49 klien, F4.3-R650(ch149)=54%/66 klien, F4.5-R650(ch161)=52%/63 klien, F4-Ext-F4.10-R750(ch161)=40%/40 klien, F4-Ext-4.14(ch157)=40%/39 klien, F4.2-R650(ch40)=18%/40 klien
+SNR klien 5 GHz se-gedung (semua snapshot): median 47 dB, n=756

@@ -1,18 +1,18 @@
 rencana,kanal,ap_L4,titik_AP_sekanal_terdengar_bersama,radio_lain_di_kanal_ini,radio_lain_terkuat_dbm
-sekarang,36,M1,0,4,-46.0
-sekarang,40,E2,0,4,-46.0
-sekarang,44,M4,0,1,-61.0
-sekarang,48,E4,0,4,-61.0
-sekarang,153,M2 + E3,9,18,-35.0
-sekarang,157,E1,0,19,-35.0
-sekarang,161,M3,0,19,-35.0
-usulan,36,M1,0,4,-46.0
-usulan,40,E3,0,4,-46.0
-usulan,44,M4,0,1,-61.0
-usulan,48,N2,0,4,-61.0
-usulan,60,E1,0,0,
-usulan,64,M2,0,0,
-usulan,149,M3,0,17,-35.0
-usulan,153,E4,0,18,-35.0
-usulan,157,E2,0,19,-35.0
-usulan,161,N1,0,19,-35.0
+sekarang,36,AP-F4.4,0,4,-46.0
+sekarang,40,AP-F4.10,0,4,-46.0
+sekarang,44,AP-F4.1,0,1,-61.0
+sekarang,48,AP-F4.9,0,4,-61.0
+sekarang,153,AP-F4.6 + AP-F4.13,9,18,-35.0
+sekarang,157,AP-F4.14,0,19,-35.0
+sekarang,161,AP-F4.3,0,19,-35.0
+usulan,36,AP-F4.5,0,4,-46.0
+usulan,40,AP-F4.10,0,4,-46.0
+usulan,44,AP-F4.1,0,1,-61.0
+usulan,48,AP-F4.9,0,4,-61.0
+usulan,52,AP-F4.14,0,1,-82.0
+usulan,56,AP-F4.13,0,1,-82.0
+usulan,60,AP-F4.6,0,0,
+usulan,153,AP-F4.2,0,18,-35.0
+usulan,157,AP-F4.4,0,19,-35.0
+usulan,161,AP-F4.3,0,19,-35.0

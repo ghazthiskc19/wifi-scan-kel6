@@ -1,9 +1,9 @@
 ap_id,x_px,y_px,bssid_wifi_ub_x,lokasi,sumber_posisi
-M1,940,350,c0:c7:0a:98:3a:52,F4.4,pemetaan di bawah AP (--ap F4.4)
-M2,1119,309,c0:c7:0a:98:34:d1,F4.6 / kanan-atas,ESTIMASI dari 3 titik terkuat - ganti x_px/y_px bila posisi fisik diketahui
-M3,1013,637,c0:c7:0a:98:38:b1,koridor bawah (F4.3/F4.5),ESTIMASI dari 3 titik terkuat - ganti x_px/y_px bila posisi fisik diketahui
-M4,783,617,c0:c7:0a:98:34:11,F4.1,ESTIMASI dari 3 titik terkuat - ganti x_px/y_px bila posisi fisik diketahui
-E1,179,329,c8:a6:08:8b:3e:01,Ext F4.14,pemetaan di bawah AP (--ap F4.14)
-E2,467,329,c0:c7:0a:98:3a:c1,Ext F4.10,pemetaan di bawah AP (--ap F4.10)
-E3,179,591,c8:a6:08:8b:1e:a1,Ext F4.13,pemetaan di bawah AP (--ap F4.13)
-E4,467,591,28:b3:71:ab:d3:91,Ext F4.9,pemetaan di bawah AP (--ap F4.9)
+AP-F4.4,940,350,c0:c7:0a:98:3a:52,di dalam F4.4,pemetaan di bawah AP (--ap F4.4)
+AP-F4.6,1119,309,c0:c7:0a:98:34:d1,"estimasi, pojok kanan-atas dekat F4.6",ESTIMASI dari 3 titik terkuat - ganti x_px/y_px bila posisi fisik diketahui
+AP-F4.3,990,612,c0:c7:0a:98:38:b1,"di dalam F4.3, di atas pintu",info lapangan (Ghazy) + nama di controller F4.3-R650 + sinyal terkuat di L4-021 tepat di depan pintu F4.3
+AP-F4.1,783,617,c0:c7:0a:98:34:11,"estimasi, dekat pintu F4.1",ESTIMASI dari 3 titik terkuat - ganti x_px/y_px bila posisi fisik diketahui
+AP-F4.14,179,329,c8:a6:08:8b:3e:01,Ext F4.14,pemetaan di bawah AP (--ap F4.14)
+AP-F4.10,467,329,c0:c7:0a:98:3a:c1,Ext F4.10,pemetaan di bawah AP (--ap F4.10)
+AP-F4.13,179,591,c8:a6:08:8b:1e:a1,Ext F4.13,pemetaan di bawah AP (--ap F4.13)
+AP-F4.9,467,591,28:b3:71:ab:d3:91,Ext F4.9,pemetaan di bawah AP (--ap F4.9)

@@ -276,8 +276,8 @@ def main():
     # ---------- validasi rencana kanal ----------
     rencana = pd.read_csv(os.path.join(OUT, "rencana_AP_kanal_L4.csv")).set_index("ap")
     P, n, _ = S.pasang_model(rssi, xy, ap)
-    P_baru = float(np.median([P[k] for k in ap.index if k.startswith("M")]))
-    plafon = float(max(rssi[a.radio].max() for k, a in ap.iterrows() if k.startswith("M")))
+    P_baru = float(np.median([P[k] for k in ap.index if k in S.UTAMA]))
+    plafon = float(max(rssi[a.radio].max() for k, a in ap.iterrows() if k in S.UTAMA))
     tabel = pd.DataFrame({k: rssi_all[a.radio] for k, a in ap.iterrows()}).fillna(-100)
     for k, _, x, y in S.AP_BARU:
         d = np.maximum(np.hypot(xy.x_px - x, xy.y_px - y) / S.SCALE, 1.0)
@@ -352,7 +352,7 @@ def timeline(kode):
                  ("11:24:41", "101"), ("11:25:18", "106")]
     fig, (a1, a2) = plt.subplots(2, 1, figsize=(17, 8), sharex=True, gridspec_kw=dict(height_ratios=[1.1, 1]))
     nama = roam.bssid.map(lambda b: kode.get(str(b).lower(), "putus" if str(b).startswith("00:00") else "lain"))
-    urut = sorted(set(nama), key=lambda x: (x[0] not in "ME", x))
+    urut = sorted(set(nama), key=lambda x: (not x.startswith("AP-"), x in S.UTAMA, x))
     ypos = {n: i for i, n in enumerate(urut)}
     a1.step(roam.t, nama.map(ypos), where="post", color="#1f77b4", lw=2)
     for _, r in roam[roam.pindah == "YA"].iterrows():
@@ -374,7 +374,7 @@ def timeline(kode):
     a2.scatter(rto, [1100] * len(rto), marker="x", color="red", s=30, label="ping gagal (Request timed out)")
     if rto:
         a2.axvspan(min(r for r in rto if r.minute >= 22), jam("11:25:31"), color="#fdd0c8", alpha=0.6, zorder=0)
-        a2.text(jam("11:23:50"), 900, "koneksi mati +-3,5 menit\n(laptop masih tersambung ke AP)", ha="center", fontsize=9, color="#a50026")
+        a2.text(jam("11:23:50"), 900, "38 dari 55 ping gagal (69%), 11:22-11:25\n(laptop masih tersambung ke AP)", ha="center", fontsize=9, color="#a50026")
         a2.axvline(jam("11:25:31"), color="black", lw=1.2)
         a2.text(jam("11:25:31"), 1150, " reconnect manual", fontsize=9)
     a2.axvspan(jam("11:19:47"), jam("11:21:10"), color="#fdd0c8", alpha=0.35, zorder=0)
@@ -384,7 +384,7 @@ def timeline(kode):
     a2.xaxis.set_major_formatter(matplotlib.dates.DateFormatter("%H:%M"))
     a1.legend(handles=[Line2D([], [], marker="x", ls="", color="red", label="uji aktif gagal (DNS tidak ditemukan, loss 100%)"),
                        Line2D([], [], marker="o", ls="", color="green", label="uji aktif berhasil")], loc="lower right", fontsize=9)
-    fig.text(0.01, 0.005, "Ping R2 baru dimulai 11:21:57. Uji aktif pertama (x merah) gagal saat laptop tersambung ke M2/E3; "
+    fig.text(0.01, 0.005, "Ping R2 baru dimulai 11:21:57. Uji aktif pertama (x merah) gagal saat laptop tersambung ke AP-F4.6/AP-F4.13; "
              "diulang 11:34-11:39 (o hijau) setelah reconnect dan berhasil semua.", fontsize=9)
     fig.tight_layout(rect=(0, 0.03, 1, 1))
     fig.savefig(os.path.join(OUT, "9_timeline_roaming_L4.png"), dpi=150)

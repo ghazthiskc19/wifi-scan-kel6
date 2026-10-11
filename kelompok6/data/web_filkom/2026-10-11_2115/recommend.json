@@ -1,0 +1,1159 @@
+{
+ "updated_ts": 1791728100,
+ "interval": 90,
+ "zone_name": "14-FILKOMv6",
+ "best": [
+  {
+   "name": "F2.Ext-Koridor",
+   "area": "Lantai 2",
+   "rating": "good",
+   "band": "5",
+   "clients": 0,
+   "airtime": 0,
+   "issues": []
+  },
+  {
+   "name": "F11.8",
+   "area": "Lantai 11",
+   "rating": "good",
+   "band": "5",
+   "clients": 0,
+   "airtime": 0,
+   "issues": []
+  },
+  {
+   "name": "F1-Akademik",
+   "area": "Lantai 1",
+   "rating": "good",
+   "band": "5",
+   "clients": 0,
+   "airtime": 0,
+   "issues": []
+  },
+  {
+   "name": "F1-Akademik-Mezanine",
+   "area": "Lantai 1",
+   "rating": "good",
+   "band": "5",
+   "clients": 0,
+   "airtime": 0,
+   "issues": []
+  },
+  {
+   "name": "F5.13-R.Kaprodi",
+   "area": "Lantai 5",
+   "rating": "good",
+   "band": "5",
+   "clients": 0,
+   "airtime": 0,
+   "issues": []
+  },
+  {
+   "name": "F11-Timur",
+   "area": "Lantai 11",
+   "rating": "good",
+   "band": "5",
+   "clients": 0,
+   "airtime": 0,
+   "issues": []
+  }
+ ],
+ "areas": [
+  {
+   "area": "Basement",
+   "aps": [
+    {
+     "name": "F1-Basemen",
+     "area": "Basement",
+     "rating": "poor",
+     "band": "5",
+     "clients": 0,
+     "airtime": 0,
+     "issues": []
+    }
+   ],
+   "clients": 0,
+   "counts": {
+    "good": 0,
+    "fair": 0,
+    "poor": 1,
+    "off": 0
+   },
+   "rating": "poor",
+   "avg_airtime": 0,
+   "hourly": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.6,
+    1.6,
+    2.2,
+    2.8,
+    2.8,
+    3.8,
+    3.4,
+    3.5,
+    3.7,
+    3.4,
+    3.8,
+    2.4,
+    1.6,
+    1.5,
+    0.9,
+    0.3,
+    0.3,
+    0.5,
+    0.1
+   ]
+  },
+  {
+   "area": "Lantai 1",
+   "aps": [
+    {
+     "name": "F1-Akademik",
+     "area": "Lantai 1",
+     "rating": "good",
+     "band": "5",
+     "clients": 0,
+     "airtime": 0,
+     "issues": []
+    },
+    {
+     "name": "F1-Akademik-Mezanine",
+     "area": "Lantai 1",
+     "rating": "good",
+     "band": "5",
+     "clients": 0,
+     "airtime": 0,
+     "issues": []
+    },
+    {
+     "name": "F1-Ext-Timur",
+     "area": "Lantai 1",
+     "rating": "good",
+     "band": "5",
+     "clients": 24,
+     "airtime": 33,
+     "issues": []
+    },
+    {
+     "name": "F1-Ext-Barat",
+     "area": "Lantai 1",
+     "rating": "fair",
+     "band": "5",
+     "clients": 3,
+     "airtime": 2,
+     "issues": []
+    },
+    {
+     "name": "F1-Lobby",
+     "area": "Lantai 1",
+     "rating": "fair",
+     "band": "5",
+     "clients": 6,
+     "airtime": 41,
+     "issues": []
+    },
+    {
+     "name": "F1-SecurityRoom",
+     "area": "Lantai 1",
+     "rating": "poor",
+     "band": "5",
+     "clients": 5,
+     "airtime": 51,
+     "issues": []
+    },
+    {
+     "name": "G1.1",
+     "area": "Lantai 1",
+     "rating": "off",
+     "band": "5",
+     "clients": 0,
+     "airtime": null,
+     "issues": []
+    },
+    {
+     "name": "G1.2",
+     "area": "Lantai 1",
+     "rating": "off",
+     "band": "5",
+     "clients": 0,
+     "airtime": null,
+     "issues": []
+    },
+    {
+     "name": "G1.4",
+     "area": "Lantai 1",
+     "rating": "off",
+     "band": "5",
+     "clients": 0,
+     "airtime": null,
+     "issues": []
+    },
+    {
+     "name": "G1.3",
+     "area": "Lantai 1",
+     "rating": "off",
+     "band": "5",
+     "clients": 0,
+     "airtime": null,
+     "issues": []
+    }
+   ],
+   "clients": 38,
+   "counts": {
+    "good": 3,
+    "fair": 2,
+    "poor": 1,
+    "off": 4
+   },
+   "rating": "good",
+   "avg_airtime": 21,
+   "hourly": [
+    15.9,
+    12.0,
+    11.2,
+    9.7,
+    10.0,
+    19.0,
+    32.6,
+    120.6,
+    166.5,
+    181.3,
+    196.6,
+    219.5,
+    206.5,
+    212.9,
+    221.5,
+    207.6,
+    177.5,
+    163.7,
+    84.0,
+    75.5,
+    83.1,
+    61.6,
+    35.3,
+    21.4
+   ]
+  },
+  {
+   "area": "Lantai 2",
+   "aps": [
+    {
+     "name": "F2.Ext-Koridor",
+     "area": "Lantai 2",
+     "rating": "good",
+     "band": "5",
+     "clients": 0,
+     "airtime": 0,
+     "issues": []
+    },
+    {
+     "name": "F2.4",
+     "area": "Lantai 2",
+     "rating": "good",
+     "band": "5",
+     "clients": 0,
+     "airtime": 0,
+     "issues": []
+    },
+    {
+     "name": "F2.6",
+     "area": "Lantai 2",
+     "rating": "good",
+     "band": "5",
+     "clients": 0,
+     "airtime": 1,
+     "issues": []
+    },
+    {
+     "name": "F2.Ext-Launchpad",
+     "area": "Lantai 2",
+     "rating": "good",
+     "band": "5",
+     "clients": 0,
+     "airtime": 3,
+     "issues": []
+    },
+    {
+     "name": "F2.5",
+     "area": "Lantai 2",
+     "rating": "good",
+     "band": "5",
+     "clients": 1,
+     "airtime": 16,
+     "issues": []
+    },
+    {
+     "name": "F2.2",
+     "area": "Lantai 2",
+     "rating": "good",
+     "band": "5",
+     "clients": 0,
+     "airtime": 44,
+     "issues": []
+    },
+    {
+     "name": "F2.9",
+     "area": "Lantai 2",
+     "rating": "poor",
+     "band": "5",
+     "clients": 0,
+     "airtime": 3,
+     "issues": []
+    },
+    {
+     "name": "G2-Auditorium-Barat",
+     "area": "Lantai 2",
+     "rating": "off",
+     "band": "5",
+     "clients": 0,
+     "airtime": null,
+     "issues": []
+    },
+    {
+     "name": "G2-Auditorium-Timur",
+     "area": "Lantai 2",
+     "rating": "off",
+     "band": "5",
+     "clients": 0,
+     "airtime": null,
+     "issues": []
+    }
+   ],
+   "clients": 1,
+   "counts": {
+    "good": 6,
+    "fair": 0,
+    "poor": 1,
+    "off": 2
+   },
+   "rating": "good",
+   "avg_airtime": 10,
+   "hourly": [
+    2.3,
+    1.2,
+    0.8,
+    0.8,
+    1.7,
+    7.1,
+    22.5,
+    124.9,
+    149.9,
+    220.7,
+    265.6,
+    275.1,
+    221.5,
+    252.9,
+    212.9,
+    167.9,
+    166.9,
+    112.6,
+    59.7,
+    41.7,
+    26.3,
+    17.1,
+    11.1,
+    7.3
+   ]
+  },
+  {
+   "area": "Lantai 3",
+   "aps": [
+    {
+     "name": "F3.11",
+     "area": "Lantai 3",
+     "rating": "off",
+     "band": "5",
+     "clients": 0,
+     "airtime": null,
+     "issues": []
+    },
+    {
+     "name": "F3-Ext-3.18",
+     "area": "Lantai 3",
+     "rating": "off",
+     "band": "5",
+     "clients": 0,
+     "airtime": null,
+     "issues": []
+    },
+    {
+     "name": "F3.4",
+     "area": "Lantai 3",
+     "rating": "off",
+     "band": "5",
+     "clients": 0,
+     "airtime": null,
+     "issues": []
+    },
+    {
+     "name": "F3-Ext-3.17",
+     "area": "Lantai 3",
+     "rating": "off",
+     "band": "5",
+     "clients": 0,
+     "airtime": null,
+     "issues": []
+    },
+    {
+     "name": "F3.3",
+     "area": "Lantai 3",
+     "rating": "off",
+     "band": "5",
+     "clients": 0,
+     "airtime": null,
+     "issues": []
+    },
+    {
+     "name": "F3-Ext-3.13",
+     "area": "Lantai 3",
+     "rating": "off",
+     "band": "5",
+     "clients": 0,
+     "airtime": null,
+     "issues": []
+    },
+    {
+     "name": "F3.12",
+     "area": "Lantai 3",
+     "rating": "off",
+     "band": "5",
+     "clients": 0,
+     "airtime": null,
+     "issues": []
+    },
+    {
+     "name": "F3.6",
+     "area": "Lantai 3",
+     "rating": "off",
+     "band": "5",
+     "clients": 0,
+     "airtime": null,
+     "issues": []
+    },
+    {
+     "name": "F3.9a",
+     "area": "Lantai 3",
+     "rating": "off",
+     "band": "5",
+     "clients": 0,
+     "airtime": null,
+     "issues": []
+    },
+    {
+     "name": "F3-Ext-3.14",
+     "area": "Lantai 3",
+     "rating": "off",
+     "band": "5",
+     "clients": 0,
+     "airtime": null,
+     "issues": []
+    }
+   ],
+   "clients": 0,
+   "counts": {
+    "good": 0,
+    "fair": 0,
+    "poor": 0,
+    "off": 10
+   },
+   "rating": "off",
+   "avg_airtime": null,
+   "hourly": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "area": "Lantai 4",
+   "aps": [
+    {
+     "name": "F4.3",
+     "area": "Lantai 4",
+     "rating": "good",
+     "band": "5",
+     "clients": 0,
+     "airtime": 0,
+     "issues": []
+    },
+    {
+     "name": "F4-Ext-F4.9",
+     "area": "Lantai 4",
+     "rating": "good",
+     "band": "5",
+     "clients": 0,
+     "airtime": 1,
+     "issues": []
+    },
+    {
+     "name": "F4-Ext-4.14",
+     "area": "Lantai 4",
+     "rating": "good",
+     "band": "5",
+     "clients": 0,
+     "airtime": 1,
+     "issues": []
+    },
+    {
+     "name": "F4-Ext-F4.10",
+     "area": "Lantai 4",
+     "rating": "good",
+     "band": "5",
+     "clients": 0,
+     "airtime": 3,
+     "issues": []
+    },
+    {
+     "name": "F4.1",
+     "area": "Lantai 4",
+     "rating": "good",
+     "band": "5",
+     "clients": 1,
+     "airtime": 5,
+     "issues": []
+    },
+    {
+     "name": "F4-Ext-4.13",
+     "area": "Lantai 4",
+     "rating": "good",
+     "band": "5",
+     "clients": 0,
+     "airtime": 51,
+     "issues": []
+    },
+    {
+     "name": "F4.4",
+     "area": "Lantai 4",
+     "rating": "fair",
+     "band": "5",
+     "clients": 0,
+     "airtime": 0,
+     "issues": []
+    },
+    {
+     "name": "F4.6",
+     "area": "Lantai 4",
+     "rating": "fair",
+     "band": "5",
+     "clients": 0,
+     "airtime": 46,
+     "issues": []
+    }
+   ],
+   "clients": 1,
+   "counts": {
+    "good": 6,
+    "fair": 2,
+    "poor": 0,
+    "off": 0
+   },
+   "rating": "good",
+   "avg_airtime": 13,
+   "hourly": [
+    1.5,
+    1.4,
+    1.4,
+    1.4,
+    1.4,
+    1.9,
+    21.1,
+    230.3,
+    206.1,
+    261.8,
+    304.3,
+    275.7,
+    182.7,
+    276.3,
+    176.0,
+    169.7,
+    186.4,
+    54.1,
+    7.3,
+    5.6,
+    3.5,
+    2.2,
+    2.3,
+    1.7
+   ]
+  },
+  {
+   "area": "Lantai 5",
+   "aps": [
+    {
+     "name": "F5.13-R.Kaprodi",
+     "area": "Lantai 5",
+     "rating": "good",
+     "band": "5",
+     "clients": 0,
+     "airtime": 0,
+     "issues": []
+    },
+    {
+     "name": "F5-Utara",
+     "area": "Lantai 5",
+     "rating": "good",
+     "band": "5",
+     "clients": 0,
+     "airtime": 0,
+     "issues": []
+    },
+    {
+     "name": "F5-BaratDaya-R.Rapat",
+     "area": "Lantai 5",
+     "rating": "fair",
+     "band": "5",
+     "clients": 0,
+     "airtime": 1,
+     "issues": []
+    },
+    {
+     "name": "F5-Ext",
+     "area": "Lantai 5",
+     "rating": "fair",
+     "band": "5",
+     "clients": 1,
+     "airtime": 0,
+     "issues": []
+    }
+   ],
+   "clients": 1,
+   "counts": {
+    "good": 2,
+    "fair": 2,
+    "poor": 0,
+    "off": 0
+   },
+   "rating": "good",
+   "avg_airtime": 0,
+   "hourly": [
+    1.3,
+    1.3,
+    1.3,
+    1.3,
+    1.3,
+    1.5,
+    3.7,
+    8.0,
+    20.8,
+    28.0,
+    30.1,
+    30.6,
+    30.9,
+    27.3,
+    29.2,
+    28.2,
+    17.0,
+    9.4,
+    6.8,
+    3.8,
+    1.8,
+    1.5,
+    1.3,
+    1.3
+   ]
+  },
+  {
+   "area": "Lantai 6",
+   "aps": [
+    {
+     "name": "F6.1",
+     "area": "Lantai 6",
+     "rating": "good",
+     "band": "5",
+     "clients": 3,
+     "airtime": 0,
+     "issues": []
+    },
+    {
+     "name": "F6-Ext",
+     "area": "Lantai 6",
+     "rating": "good",
+     "band": "5",
+     "clients": 3,
+     "airtime": 1,
+     "issues": []
+    },
+    {
+     "name": "F6 Keuangan",
+     "area": "Lantai 6",
+     "rating": "good",
+     "band": "5",
+     "clients": 0,
+     "airtime": 18,
+     "issues": []
+    },
+    {
+     "name": "F6-Barat",
+     "area": "Lantai 6",
+     "rating": "fair",
+     "band": "5",
+     "clients": 0,
+     "airtime": 3,
+     "issues": []
+    }
+   ],
+   "clients": 6,
+   "counts": {
+    "good": 3,
+    "fair": 1,
+    "poor": 0,
+    "off": 0
+   },
+   "rating": "good",
+   "avg_airtime": 6,
+   "hourly": [
+    4.5,
+    3.9,
+    3.9,
+    4.0,
+    3.9,
+    4.3,
+    7.0,
+    14.1,
+    27.3,
+    34.8,
+    38.1,
+    37.0,
+    27.3,
+    36.0,
+    38.4,
+    33.5,
+    22.3,
+    15.8,
+    12.8,
+    12.8,
+    11.8,
+    7.8,
+    5.1,
+    5.0
+   ]
+  },
+  {
+   "area": "Lantai 7",
+   "aps": [
+    {
+     "name": "F7-Meeting",
+     "area": "Lantai 7",
+     "rating": "good",
+     "band": "5",
+     "clients": 0,
+     "airtime": 0,
+     "issues": []
+    },
+    {
+     "name": "F7-BaratDaya",
+     "area": "Lantai 7",
+     "rating": "good",
+     "band": "5",
+     "clients": 0,
+     "airtime": 1,
+     "issues": []
+    },
+    {
+     "name": "F7-BaratLaut",
+     "area": "Lantai 7",
+     "rating": "good",
+     "band": "5",
+     "clients": 1,
+     "airtime": 3,
+     "issues": []
+    },
+    {
+     "name": "F7-Ext",
+     "area": "Lantai 7",
+     "rating": "good",
+     "band": "5",
+     "clients": 1,
+     "airtime": 7,
+     "issues": []
+    },
+    {
+     "name": "F7-Lobby",
+     "area": "Lantai 7",
+     "rating": "fair",
+     "band": "5",
+     "clients": 1,
+     "airtime": 0,
+     "issues": []
+    }
+   ],
+   "clients": 3,
+   "counts": {
+    "good": 4,
+    "fair": 1,
+    "poor": 0,
+    "off": 0
+   },
+   "rating": "good",
+   "avg_airtime": 2,
+   "hourly": [
+    2.7,
+    2.8,
+    2.8,
+    2.7,
+    2.7,
+    2.8,
+    4.1,
+    9.7,
+    18.4,
+    21.3,
+    18.2,
+    19.3,
+    23.4,
+    22.3,
+    25.1,
+    21.4,
+    13.4,
+    10.1,
+    7.5,
+    5.5,
+    4.1,
+    2.7,
+    2.7,
+    2.7
+   ]
+  },
+  {
+   "area": "Lantai 8",
+   "aps": [
+    {
+     "name": "F8-Timur",
+     "area": "Lantai 8",
+     "rating": "good",
+     "band": "5",
+     "clients": 0,
+     "airtime": 1,
+     "issues": []
+    },
+    {
+     "name": "F8.2",
+     "area": "Lantai 8",
+     "rating": "fair",
+     "band": "5",
+     "clients": 0,
+     "airtime": 0,
+     "issues": []
+    },
+    {
+     "name": "F8.1",
+     "area": "Lantai 8",
+     "rating": "fair",
+     "band": "5",
+     "clients": 1,
+     "airtime": 48,
+     "issues": []
+    }
+   ],
+   "clients": 1,
+   "counts": {
+    "good": 1,
+    "fair": 2,
+    "poor": 0,
+    "off": 0
+   },
+   "rating": "fair",
+   "avg_airtime": 16,
+   "hourly": [
+    1.4,
+    1.2,
+    1.2,
+    1.1,
+    1.2,
+    1.2,
+    1.2,
+    2.7,
+    6.2,
+    15.6,
+    16.3,
+    17.7,
+    20.0,
+    23.1,
+    27.7,
+    22.3,
+    14.3,
+    8.7,
+    5.5,
+    2.3,
+    1.8,
+    1.5,
+    2.0,
+    2.0
+   ]
+  },
+  {
+   "area": "Lantai 9",
+   "aps": [
+    {
+     "name": "F9.5",
+     "area": "Lantai 9",
+     "rating": "good",
+     "band": "5",
+     "clients": 9,
+     "airtime": 1,
+     "issues": []
+    },
+    {
+     "name": "F9-Timur",
+     "area": "Lantai 9",
+     "rating": "fair",
+     "band": "5",
+     "clients": 2,
+     "airtime": 0,
+     "issues": []
+    },
+    {
+     "name": "F9.8",
+     "area": "Lantai 9",
+     "rating": "poor",
+     "band": "5",
+     "clients": 0,
+     "airtime": 64,
+     "issues": []
+    }
+   ],
+   "clients": 11,
+   "counts": {
+    "good": 1,
+    "fair": 1,
+    "poor": 1,
+    "off": 0
+   },
+   "rating": "fair",
+   "avg_airtime": 22,
+   "hourly": [
+    4.9,
+    4.0,
+    3.5,
+    3.5,
+    3.6,
+    3.7,
+    4.3,
+    5.2,
+    9.2,
+    13.7,
+    17.8,
+    22.0,
+    23.9,
+    31.2,
+    32.5,
+    31.0,
+    26.8,
+    25.4,
+    21.8,
+    15.5,
+    14.9,
+    10.4,
+    7.7,
+    6.7
+   ]
+  },
+  {
+   "area": "Lantai 10",
+   "aps": [
+    {
+     "name": "F10.Multimedia",
+     "area": "Lantai 10",
+     "rating": "fair",
+     "band": "5",
+     "clients": 2,
+     "airtime": 0,
+     "issues": []
+    },
+    {
+     "name": "F10.6-LabMultimedia",
+     "area": "Lantai 10",
+     "rating": "fair",
+     "band": "5",
+     "clients": 7,
+     "airtime": 0,
+     "issues": []
+    },
+    {
+     "name": "F10.4 (Utara)",
+     "area": "Lantai 10",
+     "rating": "fair",
+     "band": "5",
+     "clients": 4,
+     "airtime": 9,
+     "issues": []
+    }
+   ],
+   "clients": 13,
+   "counts": {
+    "good": 0,
+    "fair": 3,
+    "poor": 0,
+    "off": 0
+   },
+   "rating": "fair",
+   "avg_airtime": 3,
+   "hourly": [
+    10.1,
+    9.9,
+    10.0,
+    9.9,
+    9.9,
+    10.2,
+    11.6,
+    14.1,
+    22.9,
+    26.1,
+    27.5,
+    27.2,
+    30.1,
+    33.8,
+    35.3,
+    33.7,
+    24.3,
+    20.6,
+    15.7,
+    12.7,
+    11.4,
+    10.5,
+    9.9,
+    9.8
+   ]
+  },
+  {
+   "area": "Lantai 11",
+   "aps": [
+    {
+     "name": "F11.8",
+     "area": "Lantai 11",
+     "rating": "good",
+     "band": "5",
+     "clients": 0,
+     "airtime": 0,
+     "issues": []
+    },
+    {
+     "name": "F11-Timur",
+     "area": "Lantai 11",
+     "rating": "good",
+     "band": "5",
+     "clients": 0,
+     "airtime": 0,
+     "issues": []
+    },
+    {
+     "name": "F11.3",
+     "area": "Lantai 11",
+     "rating": "good",
+     "band": "5",
+     "clients": 2,
+     "airtime": 0,
+     "issues": []
+    }
+   ],
+   "clients": 2,
+   "counts": {
+    "good": 3,
+    "fair": 0,
+    "poor": 0,
+    "off": 0
+   },
+   "rating": "good",
+   "avg_airtime": 0,
+   "hourly": [
+    3.4,
+    3.5,
+    3.5,
+    3.4,
+    3.5,
+    3.7,
+    3.8,
+    6.2,
+    12.0,
+    27.1,
+    40.2,
+    31.8,
+    33.3,
+    39.7,
+    34.2,
+    29.3,
+    24.6,
+    15.9,
+    12.7,
+    11.6,
+    9.2,
+    6.6,
+    4.5,
+    3.5
+   ]
+  },
+  {
+   "area": "Ulul Al Baab",
+   "aps": [
+    {
+     "name": "FILKOM-UluAlBaab",
+     "area": "Ulul Al Baab",
+     "rating": "fair",
+     "band": "5",
+     "clients": 0,
+     "airtime": 0,
+     "issues": []
+    }
+   ],
+   "clients": 0,
+   "counts": {
+    "good": 0,
+    "fair": 1,
+    "poor": 0,
+    "off": 0
+   },
+   "rating": "fair",
+   "avg_airtime": 0,
+   "hourly": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.1,
+    0.2,
+    0.4,
+    1.9,
+    3.2,
+    4.1,
+    13.2,
+    19.6,
+    10.4,
+    16.1,
+    15.1,
+    7.0,
+    13.8,
+    9.9,
+    1.7,
+    0.7,
+    0.1,
+    0.0,
+    0.0
+   ]
+  }
+ ]
+}

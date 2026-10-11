@@ -25,9 +25,9 @@ python bukti_L4.py
 Seluruh presentasi menceritakan **satu alur**. Semua slide harus mendukung alur ini:
 
 1. **Sinyal di lantai 4 sebenarnya sudah kuat.** 97,4% titik ≥ −67 dBm dan tidak ada blank spot.
-2. **Tapi pengguna tetap bisa lambat atau putus.** Uji aktif menemukan RTT > 50 ms dan packet loss, dan uji roaming menemukan koneksi mati ±3,5 menit setelah pindah AP.
+2. **Tapi pengguna tetap bisa lambat atau putus.** Uji aktif menemukan RTT > 50 ms dan packet loss, dan uji roaming menemukan laptop pindah AP 12× termasuk ping-pong dalam 10 detik. (Sempat ada anomali "tersambung tanpa internet", tapi penyebabnya belum bisa disimpulkan, lihat slide 8.)
 3. **Penyebab utamanya bukan kekuatan sinyal, tapi *co-channel interference* (CCI)**, yaitu terlalu banyak radio berbagi kanal yang sama. Ditambah dua hal lain: sinyal dari lantai 5 "bocor" ke lantai 4, dan proses roaming yang tidak mulus.
-4. **Solusinya bukan menambah daya, tapi mengatur ulang kanal**, menambah 2 AP di area yang memang lemah, menurunkan daya 1 AP yang terlalu kuat, dan mengaktifkan fitur roaming.
+4. **Solusinya bukan menambah daya, tapi mengatur ulang kanal**, menambah 2 AP (F4.2 yang lemah dan F4.5 untuk kapasitas, sehingga setiap ruang kuliah punya AP sendiri), menurunkan daya 1 AP yang terlalu kuat, dan mengaktifkan fitur roaming.
 5. **Hasil hitungan:** CCI turun dari **43 → 2**, AP sekanal yang saling tumpang tindih turun dari **9 → 0** titik, dan semua titik ≥ −67 dBm.
 
 > Kalimat kunci yang diulang di awal dan akhir: **"Masalah Wi-Fi lantai 4 bukan sinyal yang lemah, tapi kanal yang terlalu ramai."**
@@ -52,11 +52,19 @@ Baca bagian ini dulu. Hampir semua pertanyaan dosen akan berputar di konsep-kons
 - **AP** (access point): alat Wi-Fi yang menempel di plafon.
 - Satu AP punya beberapa **radio** (2,4 GHz dan 5 GHz). Satu radio memancarkan beberapa **SSID** (nama jaringan), misalnya `WiFi-UB.x`, `eduroam`, dan `FILKOM EVENT`.
 - **BSSID** adalah "alamat MAC" tiap SSID di tiap radio, unik per AP.
-- Semua AP di kampus memakai SSID yang sama (`WiFi-UB.x`). Karena itu **satu-satunya cara membedakan AP adalah lewat BSSID**. Contoh: `c0:c7:0a:98:3a:52` = AP yang kita sebut **M1**.
-- Di dokumen ini AP diberi kode supaya gampang:
-  - **M1–M4**: AP gedung utama
-  - **E1–E4**: AP gedung Ext
-  - **N1–N2**: AP baru (usulan)
+- Semua AP di kampus memakai SSID yang sama (`WiFi-UB.x`). Karena itu **satu-satunya cara membedakan AP adalah lewat BSSID**. Contoh: `c0:c7:0a:98:3a:52` = AP yang kita sebut **AP-F4.4**.
+- Di dokumen, gambar, dan laporan, **setiap AP dinamai sesuai ruangan tempat AP terpasang: `AP-F4.x`**:
+
+| Nama | Lokasi | Kanal sekarang | Keterangan |
+|---|---|---|---|
+| AP-F4.1 | dekat pintu F4.1 (estimasi) | 44 | gedung utama |
+| AP-F4.3 | di dalam F4.3, di atas pintu | 161 | gedung utama |
+| AP-F4.4 | di dalam F4.4 | 36 | gedung utama |
+| AP-F4.6 | pojok kanan-atas dekat F4.6 (estimasi) | 153 | gedung utama |
+| AP-F4.9 / AP-F4.10 / AP-F4.13 / AP-F4.14 | di dalam ruang Ext tersebut | 48 / 40 / 153 / 157 | gedung Ext |
+| **AP-F4.2**, **AP-F4.5** | usulan AP **baru** | – | solusi |
+
+- **Nama ini berdasarkan lokasi fisik, bukan nama di controller kampus.** Nama di controller (spreadsheet) ternyata banyak yang tidak cocok dengan ruangannya. Contoh: AP yang di controller bernama "F4.6-R650" ternyata ada di F4.4 (lihat Bagian E no. 5).
 
 ### B3. Kanal (channel) dan lebar kanal
 - Wi-Fi memakai pita frekuensi yang dibagi menjadi **kanal**. Setiap kanal punya **lebar** 20, 40, 80, atau 160 MHz.
@@ -171,10 +179,10 @@ Menaikkan daya **tidak menyelesaikan masalah kita**, malah memperparah.
    - Kalau daya AP dinaikkan, klien "mendengar" AP dari jauh, tapi AP **tidak bisa mendengar balasan klien dengan baik**. Akibatnya terjadi retransmisi dan kecepatan diturunkan.
 4. **Sticky client.**
    - Laptop melihat AP jauh masih "kuat", jadi tidak mau pindah ke AP yang lebih dekat.
-   - Contoh nyata: titik 007 di gedung utama justru dilayani **E1 (AP Ext F4.14)** dari seberang hall.
+   - Contoh nyata: titik 007 di gedung utama justru dilayani **AP-F4.14** (di gedung Ext) dari seberang hall.
 5. **Batas legal:** daya maksimum 200 mW / 23 dBm EIRP dalam ruangan (Permenkominfo 2/2023).
 
-Karena itu solusinya justru **menurunkan** daya E1 sebanyak 6 dB. Sinyalnya −34 dBm di bawah AP, terlalu kuat, dan bocor ke gedung utama.
+Karena itu solusinya justru **menurunkan** daya AP-F4.14 sebanyak 6 dB. Sinyalnya −34 dBm di bawah AP, terlalu kuat, dan bocor ke gedung utama.
 
 ### B8. Roaming, sticky client, 802.11k/v/r
 - **Roaming:** klien pindah dari satu AP ke AP lain saat berjalan.
@@ -325,26 +333,34 @@ Format tiap slide:
 
 Aplikasi: LMS, slide, browsing, video/kuliah daring.
 
-Kebutuhan kapasitas (per gedung, 210 user):
+Kebutuhan kapasitas per AP (skenario berat: 35 user × 1,8 Mbps = **63 Mbps per kelas**, kapasitas efektif ±100 Mbps per AP):
 
-| Skenario | Per user | Total | Beban dengan 4 AP | Beban dengan 6 AP |
-|---|---|---|---|---|
-| Normal (kualitas video standar) | 0,6 Mbps | 126 Mbps | 32% | 21% |
-| Berat (semua video 720p) | 1,8 Mbps | 378 Mbps | **95%** ❌ | **63%** ✅ |
+| AP | Ruang kuliah yang dilayani sekarang | Beban sekarang | Setelah solusi |
+|---|---|---|---|
+| AP-F4.4 | F4.2 + F4.4 | **126%** ❌ | F4.4 saja: 63% ✅ |
+| AP-F4.3 | F4.3 + F4.5 | **126%** ❌ | F4.3 saja: 63% ✅ |
+| AP-F4.6 | F4.6 | 63% | 63% |
+| AP-F4.1 | F4.1 | 63% | 63% |
+| AP-F4.2 (baru) | – | – | F4.2: 63% ✅ |
+| AP-F4.5 (baru) | – | – | F4.5: 63% ✅ |
+
+Skenario normal (0,6 Mbps/user = 21 Mbps per kelas): 1 AP melayani 2 kelas = 42% (masih aman).
 
 **Gambar:** foto suasana kelas (kalau ada).
 
 **Naskah lisan**
-> "Lantai 4 berisi 12 ruang kuliah. Kami asumsikan saat penuh tiap kelas diisi 35 orang, jadi ada sekitar 420 pengguna. Kalau semua menonton video kuliah 720p, kebutuhan per orang sekitar 1,8 Mbps, sesuai panduan resmi Zoom. Gedung utama sekarang punya 4 AP. Dengan kapasitas efektif sekitar 100 Mbps per AP, bebannya mencapai 95% pada skenario berat, terlalu mepet. Ini salah satu dasar usulan kami menambah AP."
+> "Lantai 4 berisi 12 ruang kuliah. Kami asumsikan saat penuh tiap kelas diisi 35 orang, jadi ada sekitar 420 pengguna. Kalau semua menonton video kuliah 720p, kebutuhan per orang sekitar 1,8 Mbps, sesuai panduan resmi Zoom, jadi satu kelas butuh sekitar 63 Mbps. Satu AP kami perkirakan sanggup sekitar 100 Mbps. Masalahnya, di gedung utama ada 6 kelas tapi hanya 4 AP: AP di F4.3 sekaligus melayani F4.5, dan AP di F4.4 sekaligus melayani F4.2. Dua AP itu kelebihan beban, 126%. Ini dasar usulan kami: satu ruang kuliah, satu AP."
 
 **Pendalaman**
-- **Hitungan:** 210 user × 1,8 Mbps = 378 Mbps. Dibagi (4 AP × 100 Mbps) = 95%. Dengan 6 AP: 378 ÷ 600 = 63%, di bawah target 70%.
+- **Hitungan per AP:** 1 kelas = 35 × 1,8 = 63 Mbps. AP yang melayani 2 kelas = 126 Mbps ÷ 100 Mbps = **126%** (kelebihan beban). AP yang melayani 1 kelas = 63%, di bawah target 70%.
+- **AP mana melayani kelas mana?** Ditentukan dari AP dengan sinyal terkuat di tengah tiap ruang (data survei titik 008, 009, 010, 013, 014, 015 + model). Contoh: di F4.5 (titik 013) AP terkuat adalah AP-F4.3 (−59 dBm), padahal AP-F4.3 berada di F4.3.
+- **Hitungan total gedung utama** (pembanding): 210 user × 1,8 = 378 Mbps; 4 AP = 95%, 6 AP = 63%.
 - **Kenapa kapasitas efektif ±100 Mbps padahal link rate 286,5 Mbps?**
   - Link rate adalah kecepatan "mentah" di udara. Sebagian waktu habis untuk antre (CSMA/CA), header, ACK, dan retransmisi.
   - Klien yang jauh juga memakai kecepatan lebih rendah, sehingga memakan airtime lebih lama.
   - Kami ambil ±35% sebagai angka konservatif. Ini **asumsi**, dan bisa diverifikasi dengan uji iperf3.
 - **Kapasitas efektif hanya berlaku kalau AP punya kanal sendiri.** Kalau 2 AP berbagi kanal dan saling dengar, kapasitas 100 Mbps itu dibagi berdua. Inilah hubungan masalah kapasitas dengan CCI (slide 5).
-- **Ext juga 95% pada skenario berat dengan 4 AP.** Ini masuk rekomendasi tahap 3 (kondisional) di slide 9.
+- **Ext:** 6 kelas dengan 4 AP, total 378 Mbps ÷ 400 Mbps = 95% pada skenario berat. Ini masuk rekomendasi tahap 3 (kondisional) di slide 9.
 - **Data controller (spreadsheet) tidak dipakai sebagai angka utama**, karena data itu dari 26-08-2025 dan sudah tidak sesuai kondisi sekarang (lihat Bagian E no. 5). Hanya disebut sebagai pembanding kalau ditanya: dulu tercatat ±364 klien di 8 AP L4, sejalan dengan estimasi kita.
 - Angka 35 orang per kelas adalah **asumsi kelompok**, bukan hasil hitung orang saat survei. Katakan itu terus terang.
 
@@ -356,8 +372,8 @@ Kebutuhan kapasitas (per gedung, 210 user):
 - **97,4%** titik ≥ −67 dBm (baik), **100%** titik ≥ −70 dBm, **0 blank spot**
 - Median −56 dBm. Titik terlemah **−69 dBm di L4-006** (pojok kiri-atas, dekat toilet)
 - Semua titik punya AP cadangan ≥ −75 dBm (syarat roaming terpenuhi)
-- **8 AP 5 GHz:** M1–M4 di gedung utama, E1–E4 di Ext, semua 20 MHz
-- Pojok kiri-atas (F4.2) & F4.8 tidak punya AP di dekatnya
+- **8 AP 5 GHz:** 4 di gedung utama (AP-F4.1, AP-F4.3, AP-F4.4, AP-F4.6), 4 di Ext (AP-F4.9, AP-F4.10, AP-F4.13, AP-F4.14), semua 20 MHz
+- Pojok kiri-atas (F4.2) tidak punya AP; F4.3 dan F4.5 berbagi satu AP (AP-F4.3, di atas pintu F4.3)
 - **Kesimpulan: kekuatan sinyal BUKAN masalah utama**
 
 **Gambar:** `1_heatmap_AP_L4.png` (besar). Opsional: `2_posisi_area_AP_L4.png` (area layanan tiap AP) sebagai gambar kecil atau slide cadangan.
@@ -371,10 +387,12 @@ Kebutuhan kapasitas (per gedung, 210 user):
   - Area putih berarti **tidak ada titik ukur** di sana, bukan blank spot.
   - Angka di samping titik adalah RSSI AP terkuat.
 - **Posisi AP (estimasi vs fisik, poin wajib modul):**
-  - **Fisik / pemetaan langsung:** M1 (F4.4) dan E1–E4 (Ext F4.14, F4.10, F4.13, F4.9). Kami berdiri tepat di bawah AP dan men-scan. BSSID terkuat = AP itu.
-  - **Estimasi:** M2, M3, dan M4. Posisinya dihitung dari rata-rata berbobot 3 titik dengan sinyal terkuat AP tersebut, karena AP ada di plafon ruang yang tidak bisa kami masuki.
+  - **Fisik / pemetaan langsung:** AP-F4.4 dan keempat AP Ext (AP-F4.9, AP-F4.10, AP-F4.13, AP-F4.14). Kami berdiri tepat di bawah AP dan men-scan. BSSID terkuat = AP itu.
+  - **Fisik dari pengamatan lapangan:** AP-F4.3 terpasang **di dalam F4.3, di atas pintu masuk**. Ada 3 bukti yang cocok: (1) pengamatan anggota saat survei; (2) sinyal AP-F4.3 paling kuat di seluruh gedung utama ada di L4-021, tepat di depan pintu F4.3 (−48,8 dBm); (3) nama di controller "F4.3-R650".
+  - **Estimasi:** AP-F4.6 dan AP-F4.1. Posisinya dihitung dari rata-rata berbobot 3 titik dengan sinyal terkuat AP tersebut. AP-F4.1 paling kuat di 015/018/201, di sekitar pintu F4.1, jadi kemungkinan besar AP-F4.1 juga terpasang di atas pintu F4.1.
+  - Catatan jujur: hasil `--ap F4.3` di `map_bssid_L4.csv` justru menunjukkan AP-F4.1 paling kuat (−45 dBm) dan AP-F4.3 hanya −57 dBm. Kemungkinan scan itu diambil di bawah AP F4.1, bukan F4.3 (pintu kedua ruang sama-sama di sisi bawah).
   - Posisi bisa dikoreksi di `data/ap_fisik_L4.csv`.
-- **Gambar area layanan (`2_posisi_area_AP_L4.png`)** menunjukkan titik L4-007 (gedung utama) **dilayani E1 di Ext**, dari seberang hall. Ini tanda E1 terlalu kuat dan ada celah AP di kiri-atas.
+- **Gambar area layanan (`2_posisi_area_AP_L4.png`)** menunjukkan titik L4-007 (gedung utama) **dilayani AP-F4.14 di Ext**, dari seberang hall. Ini tanda AP-F4.14 terlalu kuat dan ada celah AP di kiri-atas.
 - **Bukti angka:** `output/L4_ringkasan.txt` dan `output/L4_titik.csv` (kolom `rssi1`, `rssi2`).
 
 ---
@@ -385,17 +403,17 @@ Kebutuhan kapasitas (per gedung, 210 user):
 - CCI = beberapa radio di **kanal yang sama** saling dengar, sehingga harus **bergiliran memakai airtime**. Akibatnya lambat dan loss walaupun sinyal kuat
 - Aturan modul: radio sekanal ≥ −85 dBm; CCI > 2 = bermasalah
 - **Total 43 kejadian CCI di 39 titik**; 6 titik CCI > 2
-- **M2 & E3 sama-sama di kanal 153**, terdengar bersamaan di 9 titik
+- **AP-F4.6 & AP-F4.13 sama-sama di kanal 153**, terdengar bersamaan di 9 titik
 - Terparah: **hall (L4-000) dan L4-206: 6 radio sekanal**; L4-001: 5; L4-102: 4
 - Pengganggu: AP kampus yang tidak memancarkan WiFi-UB.x, AP lantai 3, hotspot/jaringan lab
 
 **Gambar:**
 - Utama: `6_bukti_cci_L4.png` (spektrum di 4 titik terparah). Kalau terlalu ramai, crop panel **L4-000** saja.
-- Pendamping kecil: `3_kanal_L4.png` (denah: kanal tiap AP + garis merah M2–E3 + lingkaran CCI per titik).
+- Pendamping kecil: `3_kanal_L4.png` (denah: kanal tiap AP + garis merah AP-F4.6–AP-F4.13 + lingkaran CCI per titik).
 
 **Naskah lisan**
 > "Ini temuan utama kami. Di Wi-Fi, perangkat di kanal yang sama harus bergiliran bicara: dengar dulu, kalau ada yang bicara, tunggu. Kalau banyak radio di satu kanal saling mendengar, waktu bicara dibagi-bagi. Akibatnya lambat, walaupun sinyalnya kuat.
-> Grafik ini adalah 'spektrum' di 4 titik terparah. Sumbu bawah adalah kanal, sumbu kiri kekuatan sinyal. Bintang adalah AP yang melayani titik itu, pita kuning adalah kanalnya. Semua titik di pita kuning di atas garis putus-putus −85 dBm adalah pengganggu. Contohnya di hall, titik 000: AP pelayannya M2 di kanal 153, dan ada 6 radio lain di kanal 153 yang terdengar. Di seluruh lantai 4 kami menemukan 43 kejadian seperti ini. Kami juga menemukan dua AP lantai 4, M2 dan E3, memakai kanal yang sama, yaitu 153."
+> Grafik ini adalah 'spektrum' di 4 titik terparah. Sumbu bawah adalah kanal, sumbu kiri kekuatan sinyal. Bintang adalah AP yang melayani titik itu, pita kuning adalah kanalnya. Semua titik di pita kuning di atas garis putus-putus −85 dBm adalah pengganggu. Contohnya di hall, titik 000: AP pelayannya AP-F4.6 di kanal 153, dan ada 6 radio lain di kanal 153 yang terdengar. Di seluruh lantai 4 kami menemukan 43 kejadian seperti ini. Kami juga menemukan dua AP lantai 4, AP-F4.6 dan AP-F4.13, memakai kanal yang sama, yaitu 153."
 
 **Pendalaman: asal angka 43 (wajib paham)**
 1. Buka `output/L4_titik.csv`, lalu jumlahkan kolom `cci`. Hasilnya **43**:
@@ -414,9 +432,9 @@ Kebutuhan kapasitas (per gedung, 210 user):
 **Kenapa radio non-WiFi-UB.x ikut dihitung?** CSMA/CA tidak peduli nama jaringan. Semua perangkat Wi-Fi di kanal yang sama harus bergiliran.
 
 **Apakah ada masalah pemilihan kanal? Ya, ada 3:**
-- **(1)** M2 dan E3 memakai kanal yang sama (153) dan saling dengar.
-- **(2)** AP L4 ditempatkan di kanal 149–161 (M2, M3, E1, E3), yang paling ramai jaringan lain.
-- **(3)** Kanal 52–64 di lantai 4 kosong, tapi tidak dimanfaatkan.
+- **(1)** AP-F4.6 dan AP-F4.13 memakai kanal yang sama (153) dan saling dengar.
+- **(2)** AP L4 ditempatkan di kanal 149–161 (AP-F4.6, AP-F4.3, AP-F4.14, AP-F4.13), yang paling ramai jaringan lain.
+- **(3)** Kanal DFS 52–64 di lantai 4 hampir kosong (52 dan 56 hanya 1 radio lemah, 60 dan 64 kosong), tapi tidak dimanfaatkan.
 
 **Bukti kanal yang dipakai tiap AP:**
 - `data/map_bssid_L4.csv` dan `data/passive_L4.csv` (kolom `channel`, `width_mhz`)
@@ -430,7 +448,7 @@ Kebutuhan kapasitas (per gedung, 210 user):
 - 51 radio 5 GHz terdengar di lantai 4 (≥ −85 dBm). Hanya **8** yang AP WiFi-UB.x lantai 4
 - Kanal **149–161 paling padat** (17–20 radio per kanal): kebanyakan jaringan lain dan radio kampus non-WiFi-UB.x
 - Kanal **36–48 lebih sepi** (2–5 radio)
-- Kanal **60 dan 64 (DFS) kosong**, belum dimanfaatkan
+- Kanal DFS **52–64 hampir kosong** (60 & 64 nol radio; 52 & 56 hanya 1 radio), belum dimanfaatkan
 - Hotspot HP 80 MHz terdengar −35 dBm di Ext, menduduki 4 kanal sekaligus (149–161)
 
 **Gambar:** `7_radio_per_kanal_L4.png` (grafik batang bertumpuk + tabel 14 radio pengganggu terkuat).
@@ -496,15 +514,15 @@ Uji aktif (8 titik; batas modul: RTT ≤ 50 ms, loss ≤ 2%):
 | 101 / 106 / 006 | −43 / −53 / −65 | 55 / 42 / 39 ms | | 0% | relatif baik |
 
 Roaming:
-- **R1** (keliling gedung utama): pindah AP 1× (M1→M3), ping putus ±4 detik
-- **R2** (Ext ↔ gedung utama): pindah AP **12×**, termasuk ping-pong M3→E2→M3 dalam 10 detik
-- ⚠️ **Setelah pindah AP, laptop tetap "tersambung" tapi internet mati**: 69% ping gagal selama 3,5 menit, 6 uji aktif gagal, dan baru pulih setelah **reconnect manual**
+- **R1** (keliling gedung utama): pindah AP 1× (AP-F4.4 → AP-F4.3), ping putus ±4 detik
+- **R2** (Ext ↔ gedung utama): pindah AP **12×**, termasuk ping-pong AP-F4.3 → AP-F4.10 → AP-F4.3 dalam 10 detik
+- **Anomali, belum bisa disimpulkan:** setelah pindah AP, laptop tetap "tersambung" tapi 38 dari 55 ping gagal (69%) selama ±3,5 menit dan 6 uji aktif gagal, baru pulih setelah **reconnect manual**. Gejala serupa juga muncul saat survei pasif ketika laptop sedang scan berulang, dan hanya terjadi di 1 laptop. Jadi **tidak disajikan sebagai temuan**, melainkan anomali yang perlu diuji ulang (di deck: slide "Roaming: yang terbukti & yang belum").
 
 **Gambar:** `9_timeline_roaming_L4.png` (utama). Opsional: `output/L4_status.png`.
 
 **Naskah lisan**
 > "Untuk membuktikan dampaknya, kami melakukan uji koneksi nyata. Tabel ini menunjukkan titik 102 di Ext: sinyalnya sangat kuat, −49 dBm, tapi 10% paket hilang. Ini ciri khas interferensi, bukan sinyal lemah. Lima dari delapan titik punya latensi di atas 50 ms.
-> Temuan paling serius ada di grafik ini. Garis atas menunjukkan AP mana yang dipakai laptop dari waktu ke waktu, dan grafik bawah adalah hasil ping. Setelah laptop berpindah AP, terutama setelah bolak-balik M3–E2 pukul 11:21, laptop tetap terlihat tersambung, tapi 69% ping gagal selama sekitar 3,5 menit. Uji aktif di 6 titik juga gagal karena alamat server tidak bisa ditemukan. Koneksi baru normal setelah kami putus dan sambung ulang secara manual. Setelah itu, uji ulang di semua titik berhasil."
+> Yang terbukti dari grafik ini adalah perpindahan AP: 12 kali, termasuk ping-pong AP-F4.3–AP-F4.10 dalam 10 detik. Ada juga anomali yang belum bisa kami simpulkan: Garis atas menunjukkan AP mana yang dipakai laptop dari waktu ke waktu, dan grafik bawah adalah hasil ping. Setelah laptop berpindah AP, terutama setelah bolak-balik AP-F4.3–AP-F4.10 pukul 11:21, laptop tetap terlihat tersambung, tapi 69% ping gagal selama sekitar 3,5 menit. Uji aktif di 6 titik juga gagal karena alamat server tidak bisa ditemukan. Koneksi baru normal setelah kami putus dan sambung ulang secara manual. Setelah itu, uji ulang di semua titik berhasil."
 
 **Pendalaman: arti tiap kolom**
 - **RTT** (*round-trip time*): waktu bolak-balik paket dari laptop ke server dan kembali. > 50 ms terasa lambat untuk video call (batas modul).
@@ -516,12 +534,12 @@ Roaming:
 
 | Jam | Kejadian |
 |---|---|
-| 11:19:03 | Laptop pindah ke M2 |
+| 11:19:03 | Laptop pindah ke AP-F4.6 |
 | 11:19:47–11:21:10 | Uji aktif di 203, 006, 007 (2×) **gagal**: "Ping request could not find host filkom.ub.ac.id" |
-| 11:21:42–11:21:52 | Ping-pong M3 → E2 → M3 |
+| 11:21:42–11:21:52 | Ping-pong AP-F4.3 → AP-F4.10 → AP-F4.3 |
 | 11:22:09–11:25:31 | **38 dari 55 ping gagal** (69%). Laptop tetap tersambung ke AP (BSSID ada di log). Uji aktif 101 & 106 gagal |
 | 11:25:31 | **Reconnect manual** (di log terlihat BSSID 00:00:00…, artinya laptop sempat lepas sebentar) |
-| 11:25:32 | Tersambung ke E1, ping normal lagi |
+| 11:25:32 | Tersambung ke AP-F4.14, ping normal lagi |
 | 11:34–11:39 | Uji aktif diulang (target 1.1.1.1), **semua berhasil** |
 
 **Interpretasinya:**
@@ -559,37 +577,38 @@ Roaming:
 
 | Komponen | Sekarang | Usulan | Alasan |
 |---|---|---|---|
-| Jumlah AP | 8 | **10** (+N1 di F4.2, +N2 di F4.8) | K1 & K4 |
+| Jumlah AP | 8 | **10** (+AP-F4.2, +AP-F4.5) | K1 (F4.2 lemah) & K4 (1 kelas = 1 AP) |
 | Lebar kanal | 20 MHz | **20 MHz** | K3: lebar = kanal sedikit = CCI |
-| Kanal | 36, 40, 44, 48, 153×2, 157, 161 | **12 kanal legal, 1 kanal = 1 AP** (2 AP di DFS) | K3 |
-| Daya | default | **E1 −6 dB** | sinyal −34 dBm, bocor ke 007 |
+| Kanal | 36, 40, 44, 48, 153×2, 157, 161 | **1 kanal = 1 AP**; 4 AP lama tetap; 3 AP pindah ke DFS | K3 |
+| Daya | default | **AP-F4.14 −6 dB** | sinyal −34 dBm, bocor ke 007 |
 | Roaming | – | **802.11k/v/r + min-RSSI ±−72 dBm** | temuan putus koneksi |
 
 Rencana kanal:
 
-| AP | M1 | M2 | M3 | M4 | E1 | E2 | E3 | E4 | N1 | N2 |
+| AP | AP-F4.4 | AP-F4.6 | AP-F4.3 | AP-F4.1 | AP-F4.14 | AP-F4.10 | AP-F4.13 | AP-F4.9 | AP-F4.2 | AP-F4.5 |
 |---|---|---|---|---|---|---|---|---|---|---|
 | Lama | 36 | 153 | 161 | 44 | 157 | 40 | 153 | 48 | – | – |
-| **Baru** | 36 | **64** | **149** | 44 | **60** | **157** | **40** | **153** | **161** | **48** |
+| **Baru** | **157** | **60** | 161 | 44 | **52** | 40 | **56** | 48 | **153** | **36** |
 
 **Gambar:** tabel saja. Boleh tambah tabel kecil "4 opsi kanal" (lihat Pendalaman).
 
 **Naskah lisan**
 > "Sebelum merancang, kami tetapkan enam kriteria: cakupan, roaming, interferensi, kapasitas, regulasi, dan biaya. Dari kriteria itu, kami mengusulkan tiga hal.
-> Pertama, tambah dua AP di pojok yang lemah, sehingga gedung utama punya 6 AP dan beban skenario berat turun dari 95 ke 63%.
-> Kedua, semua AP tetap di lebar 20 MHz. Kanal ditata ulang supaya **setiap AP lantai 4 punya kanal sendiri**. Dengan 10 AP, 8 kanal non-DFS tidak cukup, jadi 2 AP kami tempatkan di kanal DFS 60 dan 64, yang di lantai 4 kosong sama sekali.
+> Pertama, tambah dua AP: satu di F4.2 yang sinyalnya paling lemah, satu di F4.5 supaya F4.3 dan F4.5 tidak lagi berbagi satu AP. Hasilnya setiap ruang kuliah punya AP sendiri, dan beban per AP turun dari 126 ke 63%.
+> Kedua, semua AP tetap di lebar 20 MHz. Kanal ditata ulang supaya **setiap AP lantai 4 punya kanal sendiri**. Dengan 10 AP, 8 kanal non-DFS tidak cukup, jadi 3 AP kami tempatkan di kanal DFS 52, 56, dan 60, yang di lantai 4 hampir kosong. Empat AP lama tidak perlu diubah kanalnya.
 > Ketiga, turunkan daya AP Ext F4.14 sebanyak 6 dB, dan aktifkan fitur roaming 802.11k/v/r."
 
 **Pendalaman: arti tabel "Kanal"**
-- **Kolom "Sekarang"** berisi 8 AP di 7 kanal berbeda. Kanal 153 dipakai 2 AP (M2 dan E3), itulah yang dimaksud "153×2".
+- **Kolom "Sekarang"** berisi 8 AP di 7 kanal berbeda. Kanal 153 dipakai 2 AP (AP-F4.6 dan AP-F4.13), itulah yang dimaksud "153×2".
 - **Kolom "Usulan" berarti:**
-  - Pakai **ke-12 kanal 20 MHz yang legal** di Indonesia: 36, 40, 44, 48, 52, 56, 60, 64, 149, 153, 157, 161.
+  - Pilih dari **12 kanal 20 MHz yang legal** di Indonesia: 36, 40, 44, 48, 52, 56, 60, 64, 149, 153, 157, 161.
   - Setiap AP mendapat kanal yang **berbeda** dari 9 AP lainnya.
-  - Dua AP (M2 dan E1) memakai kanal DFS 60/64.
+  - **4 AP lama tetap** (AP-F4.3 161, AP-F4.1 44, AP-F4.10 40, AP-F4.9 48); **4 AP lama pindah** (AP-F4.4 → 157, AP-F4.6 → 60, AP-F4.14 → 52, AP-F4.13 → 56); 2 AP baru (AP-F4.2 153, AP-F4.5 36).
+  - Tiga AP (AP-F4.6, AP-F4.14, AP-F4.13) memakai kanal DFS 60/52/56.
 
 **Cara rencana kanal dicari** (`solusi_L4.py`):
 1. Data yang dipakai: sinyal setiap AP di 39 titik (terukur), sinyal 2 AP baru (diprediksi model, slide 11), dan semua radio lain yang terukur (lantai 3/5, jaringan lain, beserta kanalnya).
-2. **Skor sebuah rencana** = CCI (cara modul) + jumlah titik tumpang tindih AP sekanal + 3 × jumlah AP di DFS. Penalti DFS supaya DFS hanya dipakai kalau benar-benar membantu.
+2. **Skor sebuah rencana** = CCI (cara modul) + jumlah titik tumpang tindih AP sekanal + 3 × jumlah AP di DFS + 1 × jumlah AP lama yang kanalnya diganti. Penalti DFS supaya DFS hanya dipakai kalau benar-benar membantu, dan penalti perubahan supaya admin tidak perlu mengubah AP yang sudah baik.
 3. Komputer mencoba mengganti kanal satu AP sekali waktu. Kalau skornya turun, perubahan disimpan. Proses diulang sampai tidak bisa turun lagi, dari 30 titik awal acak, lalu diambil yang terbaik (*local search*).
 
 **Perbandingan 4 opsi** (`opsi_kanal_L4.csv`):
@@ -597,9 +616,9 @@ Rencana kanal:
 | Opsi | CCI (metode modul) | Titik tumpang tindih AP sekanal | AP di DFS |
 |---|---|---|---|
 | Sekarang (8 AP) | 43 | 9 | 0 |
-| +2 AP, kanal lama dibiarkan | 43 | **36** ⬆️ (makin parah) | 0 |
-| +2 AP, kanal baru, hanya non-DFS | 10 | 32 | 0 |
-| **+2 AP, kanal baru + DFS (usulan)** | **2** | **0** | 2 |
+| +2 AP, kanal lama dibiarkan | 39 | **36** ⬆️ (makin parah) | 0 |
+| +2 AP, kanal baru, hanya non-DFS | 12 | 32 | 0 |
+| **+2 AP, kanal baru + DFS (usulan)** | **2** | **0** | 3 |
 
 - **Menambah AP tanpa mengatur kanal justru memperparah** (tumpang tindih 9 → 36).
 - Tanpa DFS, tumpang tindih tetap tinggi (32), karena 10 AP > 8 kanal non-DFS, jadi pasti ada 2 pasang AP berbagi kanal. Padahal semua AP L4 saling dengar.
@@ -607,7 +626,7 @@ Rencana kanal:
 **Cara mengecek rencana kanal valid** (`validasi_kanal_L4.csv`), dengan 3 syarat:
 1. **Legal:** semua kanal ada di daftar 12 kanal (B3). ✅
 2. **Tidak ada AP L4 sekanal:** setiap kanal di rencana usulan dipakai **tepat 1 AP L4**, jadi tumpang tindih = 0. ✅
-3. **Radio lain di kanal itu lemah atau tidak ada:** di kanal 60/64 tidak ada radio lain sama sekali. Di 149–161 masih ada radio lain, tapi pada titik-titik yang dilayani AP tersebut sisa CCI hanya 2.
+3. **Radio lain di kanal itu lemah atau tidak ada:** di kanal 60 tidak ada radio lain sama sekali; di 52 dan 56 hanya 1 radio lemah (−82 dBm). Di 149–161 masih ada radio lain, tapi pada titik-titik yang dilayani AP tersebut sisa CCI hanya 2 (di 202 dan 203).
 
 Lalu cek ulang di lapangan setelah diterapkan: survei ulang, bandingkan dengan `banding_titik_L4.csv`.
 
@@ -617,33 +636,48 @@ Lalu cek ulang di lapangan setelah diterapkan: survei ulang, bandingkan dengan `
 
 | Tahap | Isi | Biaya |
 |---|---|---|
-| **Tahap 1** | Ubah kanal, turunkan daya E1, aktifkan 802.11k/v/r + min-RSSI | 0, cukup lewat controller |
-| **Tahap 2** | Pasang N1 dan N2 | 2 AP + kabel/PoE |
+| **Tahap 1** | Ubah kanal, turunkan daya AP-F4.14, aktifkan 802.11k/v/r + min-RSSI | 0, cukup lewat controller |
+| **Tahap 2** | Pasang AP-F4.2 dan AP-F4.5 | 2 AP + kabel/PoE |
 | **Tahap 3** (kondisional) | Kalau utilisasi kanal di controller Ext > 50% saat jam sibuk, tambah 1 AP di Ext F4.11/F4.12 | hitungan kapasitas Ext juga 95% pada skenario berat |
 
-**Kalau dosen menolak DFS:** pakai rencana non-DFS (CCI 10, tumpang tindih 32). Ini tetap lebih baik dari sekarang soal CCI, tapi ada 2 pasang AP yang berbagi kanal.
+**Kalau dosen menolak DFS:** pakai rencana non-DFS (CCI 12, tumpang tindih 32). Ini tetap lebih baik dari sekarang soal CCI, tapi ada 2 pasang AP yang berbagi kanal.
 
 ---
 
 ### Slide 10: Penempatan AP & Rencana Kanal di Denah
 
 **Di slide**
-- ★ **N1 di F4.2 (kiri-atas), kanal 161:** menutup 005/006/007/008. Sekarang titik terlemah −69 dBm, dan 007 dilayani AP Ext
-- ★ **N2 di F4.8 (kanan-atas), kanal 48:** menutup 003/203. Sekarang −63 dBm, jitter 97 ms, loss 5%
-- Label tiap AP: kanal lama → baru
-- Panah oranye: sinyal E1 bocor sampai 007, sehingga daya E1 diturunkan 6 dB
+- ★ **AP-F4.2 (kiri-atas), kanal 153:** menutup 005/006/007/008. Sekarang titik terlemah −69 dBm, dan 007 dilayani AP Ext
+- ★ **AP-F4.5, kanal 36:** F4.3 dan F4.5 sekarang sama-sama dilayani AP-F4.3 (beban 126% skenario berat). Dengan AP-F4.5, setiap ruang kuliah F4.1–F4.6 punya AP sendiri
+- Label tiap AP: kanal lama → baru (4 AP lama tetap)
+- Panah oranye: sinyal AP-F4.14 bocor sampai 007, sehingga daya AP-F4.14 diturunkan 6 dB
 - Pemasangan di plafon, di tengah ruang, menjauhi kolom beton dan shaft lift
 
 **Gambar:** `4_solusi_L4.png` (penuh). Kotak teks kanan boleh di-crop karena sudah ada di slide 9.
 
 **Naskah lisan**
-> "Ini posisi usulan. Bintang adalah AP baru. N1 di F4.2, pojok kiri-atas yang sekarang paling lemah dan terhalang lift dan toilet. N2 di F4.8, ruang yang menonjol di sisi atas, tempat kami mengukur jitter 97 ms. AP lama tidak perlu dipindah, cukup diganti kanalnya lewat controller. Panah oranye menunjukkan sinyal AP Ext yang terlalu kuat sampai menyeberang ke gedung utama, sehingga dayanya kami turunkan."
+> "Ini posisi usulan. Bintang adalah AP baru. AP-F4.2 dipasang di pojok kiri-atas yang sekarang paling lemah dan terhalang lift dan toilet. AP-F4.5 dipasang karena sekarang F4.5 menumpang AP milik F4.3. Dengan dua AP ini, setiap ruang kuliah punya AP sendiri. AP lama tidak perlu dipindah, dan hanya empat yang perlu diganti kanalnya lewat controller. Panah oranye menunjukkan sinyal AP Ext yang terlalu kuat sampai menyeberang ke gedung utama, sehingga dayanya kami turunkan."
 
 **Pendalaman**
 - **Kenapa di dalam ruang, bukan di koridor?** Modul §9.4: AP di koridor yang melayani ruang kelas akan teredam dinding dan pintu (bata 8–15 dB, pintu 4–6 dB). AP di dalam ruang langsung melayani penggunanya.
 - **Kenapa pojok kiri-atas lemah?** Ada inti lift, toilet, dan tangga. Material beton/bata dan logam lift meredam lebih dari 20 dB. Selain itu tidak ada AP di sisi kiri-atas.
-- **Kenapa N2 di F4.8, bukan menggeser M1?** M1 sudah melayani F4.4 dengan baik (−53 dBm). Kalau digeser ke F4.8, F4.4 jadi lemah. Menambah AP juga menambah kapasitas (slide 3).
-- Posisi N1/N2 adalah usulan berdasarkan denah. Saat pemasangan, cek ketersediaan kabel/PoE dan jalur plafon ke admin.
+- **Kenapa menambah AP, bukan memindah AP yang ada?** Kami membandingkan 7 opsi dengan model yang sama (tabel di bawah). Memindah AP ke F4.2 memang memperbaiki pojok kiri-atas, tapi selalu ada AP lain yang jadi melayani 2 kelas (beban 126%) atau malah 3 kelas (189%). Masalah kapasitas hanya hilang kalau jumlah AP = jumlah ruang kuliah.
+
+| Opsi | AP gedung utama | 006 / 007 (model) | AP terberat (skenario berat) |
+|---|---|---|---|
+| Sekarang | 4 | −66 / −65 | 126% (AP-F4.4: F4.2+F4.4, AP-F4.3: F4.3+F4.5) |
+| Pindah AP-F4.6 ke F4.2 | 4 | −54 / −54 | 126% (AP-F4.4: F4.4+F4.6, AP-F4.3: F4.3+F4.5) |
+| Pindah AP-F4.4 ke F4.2 | 4 | −57 / −57 | 126% (AP-F4.6: F4.4+F4.6, AP-F4.3) |
+| Pindah AP-F4.1 ke F4.2 | 4 | −57 / −57 | **189%** (AP-F4.3: F4.1+F4.3+F4.5) |
+| Tambah AP-F4.2 F4.2 saja | 5 | −56 / −56 | 126% (AP-F4.3: F4.3+F4.5) |
+| Tambah AP-F4.2 F4.2 + AP-F4.5 F4.8 | 6 | −56 / −56 | 126% (AP-F4.5 tidak melayani ruang kuliah) |
+| **Tambah AP-F4.2 F4.2 + AP-F4.5 F4.5 (usulan)** | 6 | −56 / −56 | **63%** ✅ |
+
+Catatan: angka 006/007 di tabel ini dari model (tanpa dinding) supaya semua opsi dibandingkan dengan cara yang sama; hasil ukur aslinya −69/−64 dBm.
+
+- **Kenapa bukan F4.8?** Sinyal di F4.8 sudah BAIK (003: −59 dBm, 203: −63 dBm). AP di F4.8 hanya memperbaiki sinyal yang sebenarnya tidak bermasalah, dan tidak mengurangi beban ruang kuliah. Jitter/loss di 203 lebih mungkin karena interferensi dan beban, yang sudah ditangani rencana kanal. Kalau setelah implementasi 203 masih bermasalah, baru dipertimbangkan.
+- **Kenapa tidak terlalu padat?** 6 AP untuk 6 ruang kuliah (±35 orang per ruang) masih wajar untuk ruang kelas. Kepadatan AP hanya jadi masalah kalau AP-AP itu berbagi kanal, dan itu sudah dicegah oleh rencana kanal (tumpang tindih = 0).
+- Posisi AP-F4.2/AP-F4.5 adalah usulan berdasarkan denah. Saat pemasangan, cek ketersediaan kabel/PoE dan jalur plafon ke admin.
 
 ---
 
@@ -654,13 +688,13 @@ Lalu cek ulang di lapangan setelah diterapkan: survei ulang, bandingkan dengan `
 | Indikator | Sekarang | Setelah solusi (prediksi) | Kriteria |
 |---|---|---|---|
 | Titik ≥ −67 dBm | 97,4% | **100%** | K1 ✅ |
-| RSSI terlemah | −69,2 dBm | **−60,8 dBm** | K1 ✅ |
+| RSSI terlemah | −69,2 dBm (006) | **−63,0 dBm** (203) | K1 ✅ |
 | CCI total (metode modul) | 43 | **2** | K3 ✅ |
 | Tumpang tindih AP sekanal | 9 titik | **0** | K3 ✅ |
 | CCI hall (000) | 6 | **0** | K3 ✅ |
-| Beban gedung utama (skenario berat) | 95% | **63%** | K4 ✅ |
+| Beban AP terberat (skenario berat) | 126% | **63%** | K4 ✅ |
 
-Contoh per titik: 006: −69 → −56 · 007: −64 → −56 · 203: −63 → −49 dBm
+Contoh per titik: 006: −69 → −56 · 007: −64 → −56 · 008: −61 → −49 dBm
 
 **Feasible karena:**
 - Tahap 1 gratis (konfigurasi controller)
@@ -671,30 +705,30 @@ Contoh per titik: 006: −69 → −56 · 007: −64 → −56 · 203: −63 →
 **Keterbatasan:**
 - Tidak ada SNR (Windows)
 - Prediksi = model tanpa dinding
-- Posisi M2–M4 hasil estimasi
+- Posisi AP-F4.6 dan AP-F4.1 hasil estimasi
 - 1 slot waktu survei
 - 20 paket per uji aktif
 
 **Gambar:** `5_prediksi_sebelum_sesudah_L4.png`.
 
 **Naskah lisan**
-> "Bagaimana kami tahu solusinya berhasil? Kami membuat model penurunan sinyal dari data survei kami sendiri, lalu menghitung ulang kondisi setelah solusi. Hasilnya: semua titik di atas −67 dBm, CCI turun dari 43 menjadi 2, dan tidak ada lagi dua AP lantai 4 yang berbagi kanal. Solusinya juga realistis: tahap pertama hanya konfigurasi tanpa biaya, dan tahap kedua cuma dua AP. Tapi ini prediksi model, jadi perlu divalidasi dengan survei ulang setelah diterapkan."
+> "Bagaimana kami tahu solusinya berhasil? Kami membuat model penurunan sinyal dari data survei kami sendiri, lalu menghitung ulang kondisi setelah solusi. Hasilnya: semua titik di atas −67 dBm, CCI turun dari 43 menjadi 2, tidak ada lagi dua AP lantai 4 yang berbagi kanal, dan setiap ruang kuliah punya AP sendiri. Solusinya juga realistis: tahap pertama hanya konfigurasi tanpa biaya, dan tahap kedua cuma dua AP. Tapi ini prediksi model, jadi perlu divalidasi dengan survei ulang setelah diterapkan."
 
 **Pendalaman: model prediksi**
 - **Rumus log-distance** (modul §4.1): `RSSI(d) = P − 10·n·log₁₀(d)`.
   - `P` = sinyal pada jarak 1 m (dihitung per AP).
-  - `n` = eksponen redaman, dicari dari data kita: **n = 2,47**. Ruang bebas n = 2, gedung penuh dinding 3,5–4. Jadi n = 2,47 cocok untuk gedung dengan koridor cincin yang cukup terbuka.
-  - **Galat model (RMSE) = 5,6 dB**, artinya rata-rata meleset ±5,6 dB dibanding hasil ukur.
+  - `n` = eksponen redaman, dicari dari data kita: **n = 2,52**. Ruang bebas n = 2, gedung penuh dinding 3,5–4. Jadi n = 2,52 cocok untuk gedung dengan koridor cincin yang cukup terbuka.
+  - **Galat model (RMSE) = 5,5 dB**, artinya rata-rata meleset ±5,5 dB dibanding hasil ukur.
   - Model **tidak menghitung dinding**, jadi bisa terlalu optimis. Karena itu sinyal AP baru **dibatasi maksimal −48,8 dBm**, yaitu sinyal terbaik yang pernah terukur dari AP gedung utama.
 - **Cara menghitung "setelah solusi":**
-  - AP lama: memakai **data terukur** (dikurangi 6 dB untuk E1).
+  - AP lama: memakai **data terukur** (dikurangi 6 dB untuk AP-F4.14).
   - AP baru: memakai model.
   - CCI dihitung ulang dengan rencana kanal baru dan semua radio lain yang terukur.
   - Hasil per titik ada di `banding_titik_L4.csv`.
 - **Kenapa angka CCI turun dari 43 ke 2?**
   - Kebanyakan dari 43 kejadian terjadi karena AP pelayan berada di kanal yang ramai (153/157/161).
   - Dengan rencana baru, AP yang melayani titik-titik itu pindah ke kanal yang sepi (60, 64, 40, 36), atau titiknya dilayani AP baru di kanal yang tidak ada pengganggunya.
-  - Sisa 2 kejadian adalah radio lain yang tetap terdengar di kanal AP pelayan.
+  - Sisa 2 kejadian (di 202 dan 203) adalah radio lain yang tetap terdengar di kanal AP pelayan.
 - **Kenapa tidak "tambah daya saja"?** Lihat B7. Sinyal sudah kuat. Menaikkan daya memperbesar sel dan CCI, membuat link asimetris dan klien makin sticky, dan dibatasi regulasi 23 dBm.
 - **Kenapa tidak "pakai 80 MHz biar cepat"?** Lihat B6. Kanal non-DFS 80 MHz hanya ada 2 blok, padahal ada 10 AP yang saling dengar. Rata-rata 5 AP per kanal, jadi airtime tiap AP tinggal ±1/5. Noise juga naik 6 dB dan butuh sinyal 6 dB lebih kuat untuk kecepatan yang sama.
 
@@ -707,8 +741,8 @@ Contoh per titik: 006: −69 → −56 · 007: −64 → −56 · 203: −63 →
 Kesimpulan:
 1. Cakupan sinyal lantai 4 **sudah baik**: 97,4% ≥ −67 dBm, tanpa blank spot
 2. **Masalah utamanya co-channel interference**: 43 kejadian, AP sekanal saling tumpang tindih, kanal 149–161 padat, kanal DFS tidak dimanfaatkan
-3. Sinyal lantai 5 bocor ke lantai 4 (6 titik nyaris tersaingi); roaming tidak mulus sampai koneksi mati ±3,5 menit
-4. Solusi: **atur ulang kanal (1 AP = 1 kanal, 2 di DFS), +2 AP, E1 −6 dB, 802.11k/v/r**. Prediksi: CCI 43 → 2, semua titik ≥ −67 dBm
+3. Sinyal lantai 5 bocor ke lantai 4 (6 titik nyaris tersaingi); roaming tidak terarah: 12× pindah AP termasuk ping-pong dalam 10 detik (anomali "tersambung tanpa internet" dicatat sebagai keterbatasan)
+4. Solusi: **atur ulang kanal (1 AP = 1 kanal, 3 di DFS), +2 AP (F4.2, F4.5) sehingga 1 ruang kuliah = 1 AP, AP-F4.14 −6 dB, 802.11k/v/r**. Prediksi: CCI 43 → 2, semua titik ≥ −67 dBm, beban AP terberat 126% → 63%
 
 Referensi (font kecil):
 1. Modul *Hands-on: Pemetaan Kualitas Sinyal Wi-Fi 5 GHz Gedung FILKOM*
@@ -721,7 +755,7 @@ Referensi (font kecil):
 8. Microsoft Learn, *Native Wifi API*
 
 **Naskah lisan**
-> "Kesimpulannya: masalah Wi-Fi lantai 4 bukan sinyal yang lemah, tapi kanal yang terlalu ramai. Solusi terpenting justru yang paling murah, yaitu mengatur ulang kanal dan memperbaiki roaming lewat controller, lalu menambah dua AP di pojok yang lemah. Terima kasih."
+> "Kesimpulannya: masalah Wi-Fi lantai 4 bukan sinyal yang lemah, tapi kanal yang terlalu ramai. Solusi terpenting justru yang paling murah, yaitu mengatur ulang kanal dan memperbaiki roaming lewat controller, lalu menambah dua AP supaya setiap ruang kuliah punya AP sendiri. Terima kasih."
 
 ---
 
@@ -759,8 +793,8 @@ Referensi (font kecil):
   - AP **F4-Ext-4.13 dan F4-Ext-4.14 tidak ditemukan** saat survei. AP yang sekarang terpasang di sana punya MAC berbeda (`c8:a6:08:…`), kemungkinan sudah diganti.
   - **Kanal keenam AP yang cocok semuanya berbeda** dengan kanal terukur. Contoh: F4.3 di spreadsheet ch 149, terukur ch 161.
   - Nama AP juga tidak cocok dengan ruang tempat sinyalnya terkuat. Contoh: "F4.6-R650" paling kuat di F4.4.
-- **Gambar kita tidak memakai posisi dari spreadsheet.** Posisi diambil dari pemetaan di bawah AP (M1, E1–E4) dan estimasi dari data (M2–M4). Semuanya tercatat di `data/ap_fisik_L4.csv`.
-- **Kalau lo tahu posisi fisik M2/M3/M4** (dari foto atau catatan waktu survei): ganti `x_px` dan `y_px` di file itu (koordinat pixel denah, 20 px = 1 m; lihat `denah/peta_titik_L4_rev.png` untuk acuan), lalu jalankan `python solusi_L4.py` dan `python bukti_L4.py`. Semua gambar akan ikut berubah.
+- **Gambar kita tidak memakai posisi dari spreadsheet.** Posisi diambil dari pemetaan di bawah AP (AP-F4.4 + 4 AP Ext), pengamatan lapangan (AP-F4.3 di atas pintu), dan estimasi dari data (AP-F4.6, AP-F4.1). Semuanya tercatat di `data/ap_fisik_L4.csv`.
+- **Kalau lo tahu posisi fisik AP-F4.6/AP-F4.1** (dari foto atau catatan waktu survei): ganti `x_px` dan `y_px` di file itu (koordinat pixel denah, 20 px = 1 m; lihat `denah/peta_titik_L4_rev.png` untuk acuan), lalu jalankan `python solusi_L4.py` dan `python bukti_L4.py`. Semua gambar akan ikut berubah.
 
 **6. Penjelasan lisan kurang?** Sudah dibuat naskah lengkap per slide (Bagian D) dan konsep dasar dengan analogi (Bagian B).
 
@@ -769,7 +803,7 @@ Referensi (font kecil):
   - Gambar `6_bukti_cci_L4.png` (spektrum per titik)
   - `bukti_cci_L4.csv` (43 baris = 43 kejadian)
   - Kolom `cci` di `output/L4_titik.csv`
-- **Masalah pemilihan kanal ada 3:** M2 & E3 sekanal; AP ditaruh di kanal paling ramai; kanal DFS kosong tidak dipakai (slide 5).
+- **Masalah pemilihan kanal ada 3:** AP-F4.6 & AP-F4.13 sekanal; AP ditaruh di kanal paling ramai; kanal DFS kosong tidak dipakai (slide 5).
 - **Bukti kanal tiap AP:**
   - `data/map_bssid_L4.csv` dan `data/passive_L4.csv` (kolom `channel` & `width_mhz`)
   - Bisa didemokan dengan `netsh wlan show networks mode=bssid` atau WiFiAnalyzer
@@ -816,6 +850,16 @@ Referensi (font kecil):
 **16. Kenapa "tambah daya" dan "80 MHz" bukan solusi?**
 - Lihat B6 (lebar kanal) dan B7 (daya). Penjelasannya dari konsep dasar, lengkap dengan analogi dan angka.
 
+**17. Kenapa tambah 2 AP, bukan pindah? Kenapa F4.8, bukan F4.3/F4.5?**
+- **Lo benar, dan usulannya sudah diganti: AP-F4.5 sekarang di F4.5, bukan F4.8.**
+- **Kenapa tetap butuh 2 AP?**
+  - AP-F4.2 untuk **cakupan**: titik terlemah 006 dan 007 yang dilayani AP Ext.
+  - AP-F4.5 untuk **kapasitas**: sekarang AP-F4.3 (di atas pintu) melayani F4.3 sekaligus F4.5. Pada skenario berat, bebannya 126%.
+- **Kenapa tidak cukup memindah AP?** Sudah dicoba 3 variasi pemindahan (AP-F4.4, AP-F4.6, atau AP-F4.1 ke F4.2). Semuanya tetap menyisakan 1 AP yang melayani 2–3 kelas (126–189%). Tabelnya ada di slide 10 Pendalaman.
+- **Kenapa F4.8 dicoret?** Sinyalnya sudah BAIK (−59/−63 dBm), dan F4.8 bukan salah satu dari 6 ruang kuliah utama. AP di sana tidak mengurangi beban.
+- **Terlalu padat?** Tidak, selama tiap AP punya kanal sendiri (tumpang tindih = 0). Kepadatan AP baru jadi masalah kalau kanalnya bentrok.
+- **Posisi AP-F4.3** sudah dipindah ke dalam F4.3 di atas pintu, sesuai info lo. Datanya juga mendukung: titik L4-021 tepat di depan pintu F4.3 adalah titik terkuat AP-F4.3.
+
 ---
 
 ## Bagian F: Persiapan Tanya Jawab
@@ -828,15 +872,16 @@ Referensi (font kecil):
 | Kenapa batas CCI −85 dBm? | Aturan modul §4.5. Perangkat 802.11 wajib menunggu kalau mendeteksi sinyal Wi-Fi ≥ −82 dBm (20 MHz); −85 diambil sebagai margin. |
 | Kenapa L3 terlihat lebih buruk dari L4? | Laptop L3 membaca 7,6 dB lebih lemah (hasil kalibrasi). Setelah dikoreksi, kondisinya mirip L4. |
 | Apakah DFS legal di Indonesia? | Pita 5250–5350 MHz (kanal 52–64) termasuk izin kelas untuk dalam ruangan (Permenkominfo 2/2023). DFS adalah mekanisme menghindari radar yang dijalankan AP. Lantai 3 FILKOM sudah memakai kanal 52/60/64. |
-| Kalau ada radar dan AP DFS pindah kanal? | Klien di AP itu putus beberapa detik. Karena itu DFS hanya dipakai 2 AP, dan ada rencana cadangan non-DFS. |
+| Kalau ada radar dan AP DFS pindah kanal? | Klien di AP itu putus beberapa detik. Karena itu DFS hanya dipakai 3 dari 10 AP, dan ada rencana cadangan non-DFS. |
 | Kenapa kanal 165 tidak dipakai? | Kanal 165 (5815–5835 MHz) melewati batas atas 5825 MHz di regulasi. |
-| Seberapa yakin prediksinya? | Galat model 5,6 dB, tanpa dinding. Jadi itu arah perbaikan, bukan angka pasti. Sinyal AP baru sudah dibatasi supaya tidak optimis. Harus divalidasi dengan survei ulang. |
-| Kenapa tidak geser AP saja? | Menggeser tidak menambah kapasitas. Di skenario berat gedung utama 95%, dan menggeser M1 ke F4.8 membuat F4.4 lemah. |
+| Seberapa yakin prediksinya? | Galat model 5,5 dB, tanpa dinding. Jadi itu arah perbaikan, bukan angka pasti. Sinyal AP baru sudah dibatasi supaya tidak optimis. Harus divalidasi dengan survei ulang. |
+| Kenapa tidak geser AP saja? | Sudah kami bandingkan 3 variasi pemindahan. Semuanya menyisakan 1 AP yang melayani 2–3 kelas (beban 126–189%). Hanya dengan 1 AP per ruang kuliah bebannya turun ke 63%. |
+| Kenapa AP baru di F4.5, bukan F4.8? | F4.8 sinyalnya sudah baik (−59/−63 dBm) dan bukan ruang kuliah utama. F4.5 sekarang menumpang AP F4.3, jadi AP baru di F4.5 langsung mengurangi beban. |
 | Kenapa 802.11r? | WiFi-UB.x memakai WPA2/3-Enterprise (login akun). Tanpa 802.11r, setiap pindah AP harus login ulang penuh. Kami menemukan koneksi mati setelah pindah AP. |
 | Apakah koneksi putus pasti salah jaringan? | Tidak pasti. Bisa juga driver laptop. Polanya konsisten setelah pindah AP. Kami rekomendasikan admin memeriksa log RADIUS/DHCP dan mengulang uji dengan perangkat lain. |
 | Kenapa angka spreadsheet (klien, kanal) tidak dipakai? | Data dari Agustus 2025. 2 AP sudah tidak ada, dan kanal semua AP sudah berbeda. Kami memakai hasil ukur sendiri. |
 | Dari mana 35 orang per kelas? | Asumsi kelompok berdasarkan kapasitas kelas 30–40 kursi, bukan hasil hitung saat survei. |
-| Kalau anggaran hanya cukup 1 AP? | Prioritaskan Tahap 1 (gratis), lalu **N1 di F4.2**, karena area itu paling lemah dan 007 bermasalah. |
+| Kalau anggaran hanya cukup 1 AP? | Prioritaskan Tahap 1 (gratis), lalu **AP-F4.2**, karena area itu paling lemah dan 007 bermasalah. |
 
 ---
 
@@ -847,7 +892,7 @@ Referensi (font kecil):
 - **Cakupan L4:** 97,4% ≥ −67 dBm, median −56, terlemah −69 (006), 0 blank spot
 - **CCI:**
   - 43 kejadian di 39 titik; terparah hall 000 dan 206 (6 radio)
-  - M2 & E3 sekanal (153), tumpang tindih di 9 titik
+  - AP-F4.6 & AP-F4.13 sekanal (153), tumpang tindih di 9 titik
   - 51 radio terdengar di L4, hanya 8 AP WiFi-UB.x L4; kanal 149–161 berisi 17–20 radio; 60/64 kosong
 - **Floor bleed:**
   - 10 titik L4 mendengar AP L3/L5 ≥ −75; 6 titik selisih ≤ 6 dB (010: 1,5 dB)
@@ -856,8 +901,10 @@ Referensi (font kecil):
 - **Roaming:** R2 12× pindah AP; 69% ping gagal selama ±3,5 menit sampai reconnect manual
 - **Offset laptop:** L3 −7,6 dB, L5 −5,4 dB
 - **Solusi:**
-  - +2 AP (N1 F4.2 ch161, N2 F4.8 ch48), 1 AP = 1 kanal (M2 ch64 & E1 ch60 di DFS), E1 −6 dB, 802.11k/v/r
-  - CCI 43 → 2, tumpang tindih 9 → 0, terlemah −69 → −61 dBm, beban berat 95% → 63%
+  - +2 AP (AP-F4.2 F4.2 ch153, AP-F4.5 F4.5 ch36), 1 ruang kuliah = 1 AP
+  - Kanal: 1 AP = 1 kanal; 4 AP lama tetap (AP-F4.3 161, AP-F4.1 44, AP-F4.10 40, AP-F4.9 48); AP-F4.4 → 157; AP-F4.6 → 60, AP-F4.14 → 52, AP-F4.13 → 56 (DFS)
+  - AP-F4.14 −6 dB, 802.11k/v/r
+  - CCI 43 → 2, tumpang tindih 9 → 0, terlemah −69 → −63 dBm, beban AP terberat 126% → 63%
 
 **Checklist gambar:**
 
@@ -875,5 +922,78 @@ Referensi (font kecil):
 
 **Yang masih perlu diisi tim:**
 1. Fungsi ruang F4.7 dan F4.8 (slide 3).
-2. Posisi fisik M2, M3, M4 kalau diketahui → edit `data/ap_fisik_L4.csv`, lalu jalankan ulang skrip.
+2. Posisi fisik AP-F4.6 dan AP-F4.1 kalau diketahui (AP-F4.1 kemungkinan di atas pintu F4.1) → edit `data/ap_fisik_L4.csv`, lalu jalankan ulang skrip.
 3. Screenshot `netsh wlan show networks mode=bssid` atau WiFiAnalyzer di bawah satu AP, sebagai bukti kanal (opsional, bagus untuk slide 5).
+
+---
+
+## Bagian H: Simulasi pembanding (deck teman, `Document/Lantai4-wifi-analysis (3).pptx`)
+
+Dipakai di slide 39–43 `slide/SLIDE_L4.md` sebagai **pendukung**, bukan pengganti data ukur. Versi (3) adalah versi akhir yang memakai **posisi dan rencana kanal usulan kita (10 dari 10 AP sama)**.
+
+| Item | Nilai |
+|---|---|
+| AP | 10 AP 5 GHz (di simulasi: 9 R650, 1 R750), Tx 20 dBm per AP |
+| Kanal | AP-F4.14 52, AP-F4.10 40, AP-F4.13 56, AP-F4.9 48, AP-F4.4 157, AP-F4.1 44, AP-F4.6 60, AP-F4.3 161, AP-F4.2 153, AP-F4.5 36 (= rencana usulan) |
+| Model propagasi | Free-space path loss + redaman dinding (128 dinding), plafon 4 m, klien referensi, downlink |
+| Cakupan | 87,7% ≥ −70 dBm, dihitung dari kotak denah 53 × 34 m (1.807 m²) termasuk area luar gedung |
+
+**Cara membaca 4 peta:**
+- **SNR:** semua ruang hijau (kategori teratas). Kuning hanya di tangga dan shaft lift.
+- **Interferensi kanal:** seluruh lantai hijau (0–10%). Dengan rencana kanal usulan, AP lantai 4 tidak saling mengganggu. Simulasi tidak tahu ada jaringan lain; sisa CCI dari data ukur = 2.
+- **Kapasitas user:** seluruh lantai hijau (≥ 150% kebutuhan). Cocok dengan hitungan kita: beban 63% per AP sama dengan kapasitas ±1,6× kebutuhan.
+- **Cakupan cadangan:** kuat di tengah gedung utama, lebih lemah di Ext dan tepi gedung. Data ukur tetap memenuhi K2.
+- **Data rate** tidak ditampilkan, karena klien referensi simulasi tidak sama dengan laptop kita.
+
+**Kenapa cakupan turun dari 90,2% (versi 2) ke 87,7% (versi 3)?**
+- Versi 2 memakai model ITU-R P.1238. Versi 3 memakai free-space path loss + redaman dinding.
+- Rencana kanal **tidak mengubah kuat sinyal**. Kanal hanya menentukan interferensi.
+- Jadi selisihnya berasal dari model propagasi yang berganti, dan terjadi di area luar ruang. Semua ruang kuliah tetap hijau atau hijau muda.
+
+**Versi 2 (rencana kanal teman sebelumnya)**, diuji dengan data ukur kita (`opsi_kanal_L4.csv`, baris "+2 AP, kanal dari simulasi"): CCI 4 (di 000, 109, 203), tumpang tindih 0, 2 AP di DFS, 6 AP lama diubah. Usulan kita: CCI 2, tumpang tindih 0, 3 AP di DFS, 4 AP lama diubah. Karena itu versi akhir simulasi memakai rencana kanal kita.
+
+---
+
+## Bagian I: Data Wi-Fi FILKOM (website filkom.ub.ac.id/wifi)
+
+**Sumber:** `https://filkom.ub.ac.id/wifi/`, halaman publik milik kampus. Halaman ini memakai beberapa API publik. Data dibagi dua jenis:
+
+| Endpoint | Isi | Sifat | Dipakai? |
+|---|---|---|---|
+| `api/public/recommend` | Per AP: rating, jumlah perangkat, airtime 5 GHz (%). Per lantai: rata-rata perangkat per jam (7 hari) | **live**, diperbarui tiap ±90 detik | ✅ |
+| `api/public/wifimodel/clients` | Per perangkat tersambung: AP, RSSI, SNR, rate | **live** | ✅ (pelengkap) |
+| `api/public/wifimodel` | Peta 3D: posisi, model, EIRP, kanal AP | **statis, belum diperbarui** | ❌ hanya diarsipkan |
+
+**Prinsip:** data survei kita (kanal, posisi AP, RSSI, CCI) **tidak diganti** dengan data website. Data website hanya dipakai untuk hal yang tidak bisa kita ukur sendiri: airtime dari sisi AP dan jumlah perangkat nyata.
+
+**Cara ambil:** `python kelompok6/ambil_web_filkom.py` (sekali) atau `--poll 5 --jam 8` (berulang, jalankan saat jam kuliah). Hasilnya:
+- Snapshot JSON di `kelompok6/data/web_filkom/<tanggal_jam>/`
+- Deret waktu di `poll_ap.csv` dan `poll_klien.csv`
+- Field `id` perangkat tidak disimpan (privasi)
+
+Gambar dibuat oleh `python kelompok6/web_L4.py`, yang menghasilkan:
+- `10_web_pengguna_L4.png`
+- `11_web_airtime_L4.png`
+- `web_ringkasan_L4.txt`
+
+**Yang didapat (memperkuat temuan, tidak mengubah angka survei):**
+1. **CCI di kanal 153 terlihat dari sisi jaringan.**
+   - Minggu malam 11 Okt 2026 (11 snapshot, 21:09–21:34), tanpa klien: dua AP yang menurut survei kita di kanal 153 (F4.6 dan F4-Ext-4.13) airtime rata-rata 40% dan 38%, tidak pernah di bawah 20%. Enam AP lain rata-rata ≤ 10% (AP-F4.10 sempat naik ke 42% di 2 snapshot).
+   - Daftar AP kampus Agustus 2025 (jam kuliah): AP kanal 153 juga airtime tertinggi. F4-Ext-4.13 85% dengan hanya 18 klien.
+   - Airtime tinggi tanpa klien = kanal dipakai radio lain.
+2. **Asumsi ±420 pengguna masuk akal.**
+   - Rata-rata 7 hari (termasuk akhir pekan): puncak 304 perangkat pukul 10:00, rata-rata jam 08–16 sebanyak 227.
+   - Agustus 2025 15:40: 364 klien.
+3. **SNR klien** (perangkat yang tersambung, se-gedung, Minggu malam): median 47 dB. Ini hanya pelengkap, bukan SNR per titik ukur.
+
+**Yang tidak berubah:** semua angka survei, rencana kanal, daya AP-F4.14 (−6 dB), posisi AP, dan hasil prediksi.
+
+**Catatan peta 3D website:** posisi, model, dan EIRP AP di sana belum diperbarui, jadi tidak dipakai. Kalau ditanya: "Peta 3D di website belum diperbarui, jadi posisi dan kanal AP kami ambil dari survei langsung."
+
+**Keterbatasan:**
+- Snapshot diambil Minggu malam, di luar jam kuliah. Jalankan polling di hari kerja untuk bukti jam kuliah.
+- Profil per jam adalah rata-rata 7 hari termasuk akhir pekan.
+- Lantai 3 berstatus "off" di website (tidak ada data).
+- Daftar AP kampus 2025 memakai nama AP lama, jadi dibandingkan per kanal, bukan per nama.
+
+**Jawaban kalau ditanya "dari mana data Wi-Fi FILKOM?":** "Dari website publik Wi-Fi FILKOM milik kampus. Kami hanya mengambil endpoint publik yang dipakai halaman itu sendiri, tanpa login, dan tidak menyimpan identitas perangkat."
