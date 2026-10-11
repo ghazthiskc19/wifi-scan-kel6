@@ -1,0 +1,14 @@
+﻿titik_id,lokasi,rssi_terkuat_dbm,kanal,bssid_terkuat,rssi_cadangan_dbm,jumlah_radio_WiFi-UB.x,catatan,laptop,waktu
+L3-000,"posisi sama dgn L4-000 (Hall sisi A (KALIBRASI, scan 5x))",-74,64,fc:7f:f1:dd:53:30,-79,8,"Hall, kalibrasi",lipkusuma-tif,2026-10-11T10:11:57
+L3-007,"posisi sama dgn L4-007 (Koridor kiri, depan lift atas)",-49,157,e8:10:98:82:05:a0,-75,3,Depan pintu toilet,lipkusuma-tif,2026-10-11T10:53:09
+L3-008,posisi sama dgn L4-008 (F4.2 tengah),-57,157,e8:10:98:82:05:a0,-67,5,"Ruang kelas F3.4, perkiraan 40 orang, didalam kelas",lipkusuma-tif,2026-10-11T10:20:48
+L3-009,posisi sama dgn L4-009 (F4.4 tengah),-64,64,fc:7f:f1:dd:53:30,-66,5,"Ruang kelas F3.8, perkiraan 40 orang, didalam kelas",lipkusuma-tif,2026-10-11T10:19:17
+L3-010,posisi sama dgn L4-010 (F4.6 tengah),-43,64,fc:7f:f1:dd:53:30,-79,5,"Ruang kelas F3.12, perkiraan 40 orang, didalam kelas",lipkusuma-tif,2026-10-11T10:17:47
+L3-013,posisi sama dgn L4-013 (F4.5 tengah),-68,64,fc:7f:f1:dd:53:30,-77,9,"Ruang kelas F3.11, perkiraan 40 orang, didalam kelas",lipkusuma-tif,2026-10-11T10:22:50
+L3-014,posisi sama dgn L4-014 (F4.3 tengah),-77,52,54:d7:e3:42:42:d0,-79,2,"Ruang kelas F3.7, perkiraan 40 orang, didalam kelas",lipkusuma-tif,2026-10-11T10:26:31
+L3-015,posisi sama dgn L4-015 (F4.1 tengah),-77,52,54:d7:e3:42:42:d0,-79,2,"Ruang kelas F3.3, perkiraan 40 orang, didalam kelas",lipkusuma-tif,2026-10-11T10:27:51
+L3-101,posisi sama dgn L4-101 (Ext F4.14 tengah),-63,60,54:d7:e3:45:4c:90,-66,4,"Ruang kelas F3.18, perkiraan 40 orang, didalam kelas",lipkusuma-tif,2026-10-11T10:46:05
+L3-103,posisi sama dgn L4-103 (Ext F4.10 tengah),-40,36,54:d7:e3:42:97:90,-78,4,"Ruang kelas F3.14, perkiraan 32 orang, Diluar ruangan kehalang tembok & pintu",lipkusuma-tif,2026-10-11T10:51:12
+L3-105,posisi sama dgn L4-105 (Koridor Ext tengah),-57,149,54:d7:e3:41:42:d0,-68,5,Lantai 3 koridor,lipkusuma-tif,2026-10-11T10:42:13
+L3-107,posisi sama dgn L4-107 (Ext F4.13 tengah),-57,60,54:d7:e3:45:4c:90,-73,3,"Ruang kelas F3.17, perkiraan 32 orang, didalam kelas",lipkusuma-tif,2026-10-11T10:43:36
+L3-109,posisi sama dgn L4-109 (Ext F4.9 tengah),-77,149,54:d7:e3:41:42:d0,-87,2,"Ruang kelas F3.13, perkiraan 32 orang, didalam kelas",lipkusuma-tif,2026-10-11T10:40:15

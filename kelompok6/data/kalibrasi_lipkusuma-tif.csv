@@ -1,0 +1,109 @@
+timestamp,lantai,titik_id,x_px,y_px,slot_waktu,device,scan_ke,ssid,bssid,freq_mhz,channel,band,width_mhz,rssi_dbm,noise_dbm,sta_count,ch_util_pct,security,pmf,catatan
+2026-10-11T09:52:57,4,L4-000,,,T1,lipkusuma-tif,1,FILKOM EVENT,c0:c7:0a:58:34:d1,2462,11,2.4,20,-69.0,,0,5.9,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:52:57,4,L4-000,,,T1,lipkusuma-tif,1,eduroam,56:d9:e7:fb:0a:f1,2437,6,2.4,20,-92.0,,0,46.7,WPA2/3-Enterprise,no,kalibrasi
+2026-10-11T09:52:57,4,L4-000,,,T1,lipkusuma-tif,1,FIB UB,80:2a:a8:3d:1b:47,2437,6,2.4,20,-84.0,,,,WPA2-Personal,no,kalibrasi
+2026-10-11T09:52:57,4,L4-000,,,T1,lipkusuma-tif,1,,c8:5a:9f:ce:72:52,2427,4,2.4,20,-80.0,,0,0.0,WPA2-Personal,no,kalibrasi
+2026-10-11T09:52:57,4,L4-000,,,T1,lipkusuma-tif,1,WiFi-UB.x,c0:c7:0a:98:34:11,5220,44,5,20,-68.0,,0,8.2,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:52:57,4,L4-000,,,T1,lipkusuma-tif,1,eduroam,c8:a6:08:8b:3e:00,5785,157,5,20,-83.0,,3,3.9,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:52:57,4,L4-000,,,T1,lipkusuma-tif,1,myECO_IR,ca:2b:96:1c:d9:5c,2412,1,2.4,20,-75.0,,,,Open,no,kalibrasi
+2026-10-11T09:52:57,4,L4-000,,,T1,lipkusuma-tif,1,FILKOM EVENT,c0:c7:0a:98:34:d2,5765,153,5,20,-61.0,,1,28.2,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:52:57,4,L4-000,,,T1,lipkusuma-tif,1,myECO_LIDAR,de:4f:22:52:89:25,2412,1,2.4,20,-54.0,,,,Open,no,kalibrasi
+2026-10-11T09:52:57,4,L4-000,,,T1,lipkusuma-tif,1,WiFi-UB.x,c0:c7:0a:58:34:d2,2462,11,2.4,20,-68.0,,0,5.9,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:52:57,4,L4-000,,,T1,lipkusuma-tif,1,WiFi-UB.x,c0:c7:0a:98:38:b1,5805,161,5,20,-69.0,,0,1.6,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:52:57,4,L4-000,,,T1,lipkusuma-tif,1,FILKOM EVENT,c0:c7:0a:98:34:12,5220,44,5,20,-77.0,,1,6.7,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:52:57,4,L4-000,,,T1,lipkusuma-tif,1,FILKOM EVENT,c0:c7:0a:98:38:b2,5805,161,5,20,-70.0,,0,1.6,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:52:57,4,L4-000,,,T1,lipkusuma-tif,1,WiFi-UB.x,c0:c7:0a:98:34:d1,5765,153,5,20,-60.0,,8,28.2,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:52:57,4,L4-000,,,T1,lipkusuma-tif,1,WiFi-UB.x,c0:c7:0a:98:3a:52,5180,36,5,20,-68.0,,1,0.8,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:52:57,4,L4-000,,,T1,lipkusuma-tif,1,FILKOM EVENT,c0:c7:0a:98:3a:51,5180,36,5,20,-69.0,,0,1.6,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:52:57,4,L4-000,,,T1,lipkusuma-tif,1,eduroam,c0:c7:0a:98:3a:50,5180,36,5,20,-69.0,,0,1.6,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:52:57,4,L4-000,,,T1,lipkusuma-tif,1,eduroam,c0:c7:0a:98:34:10,5220,44,5,20,-75.0,,0,6.7,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:52:57,4,L4-000,,,T1,lipkusuma-tif,1,eduroam,c0:c7:0a:98:34:d0,5765,153,5,20,-60.0,,0,28.2,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:52:57,4,L4-000,,,T1,lipkusuma-tif,1,eduroam,c0:c7:0a:98:38:b0,5805,161,5,20,-69.0,,0,1.6,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:52:57,4,L4-000,,,T1,lipkusuma-tif,1,eduroam,c0:c7:0a:58:34:d0,2462,11,2.4,20,-68.0,,0,5.9,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:07,4,L4-000,,,T1,lipkusuma-tif,2,FILKOM EVENT,c0:c7:0a:58:34:d1,2462,11,2.4,20,-69.0,,0,5.9,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:53:07,4,L4-000,,,T1,lipkusuma-tif,2,eduroam,56:d9:e7:fb:0a:f1,2437,6,2.4,20,-92.0,,0,46.7,WPA2/3-Enterprise,no,kalibrasi
+2026-10-11T09:53:07,4,L4-000,,,T1,lipkusuma-tif,2,FIB UB,80:2a:a8:3d:1b:47,2437,6,2.4,20,-84.0,,,,WPA2-Personal,no,kalibrasi
+2026-10-11T09:53:07,4,L4-000,,,T1,lipkusuma-tif,2,,c8:5a:9f:ce:72:52,2427,4,2.4,20,-80.0,,0,0.0,WPA2-Personal,no,kalibrasi
+2026-10-11T09:53:07,4,L4-000,,,T1,lipkusuma-tif,2,WiFi-UB.x,c0:c7:0a:98:34:11,5220,44,5,20,-68.0,,0,8.2,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:07,4,L4-000,,,T1,lipkusuma-tif,2,eduroam,c8:a6:08:8b:3e:00,5785,157,5,20,-83.0,,3,3.9,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:07,4,L4-000,,,T1,lipkusuma-tif,2,myECO_IR,ca:2b:96:1c:d9:5c,2412,1,2.4,20,-75.0,,,,Open,no,kalibrasi
+2026-10-11T09:53:07,4,L4-000,,,T1,lipkusuma-tif,2,FILKOM EVENT,c0:c7:0a:98:34:d2,5765,153,5,20,-68.0,,1,21.6,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:53:07,4,L4-000,,,T1,lipkusuma-tif,2,myECO_LIDAR,de:4f:22:52:89:25,2412,1,2.4,20,-54.0,,,,Open,no,kalibrasi
+2026-10-11T09:53:07,4,L4-000,,,T1,lipkusuma-tif,2,WiFi-UB.x,c0:c7:0a:58:34:d2,2462,11,2.4,20,-68.0,,0,5.9,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:07,4,L4-000,,,T1,lipkusuma-tif,2,WiFi-UB.x,c0:c7:0a:98:38:b1,5805,161,5,20,-70.0,,0,2.0,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:07,4,L4-000,,,T1,lipkusuma-tif,2,FILKOM EVENT,c0:c7:0a:98:34:12,5220,44,5,20,-77.0,,1,6.7,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:53:07,4,L4-000,,,T1,lipkusuma-tif,2,FILKOM EVENT,c0:c7:0a:98:38:b2,5805,161,5,20,-70.0,,0,2.0,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:53:07,4,L4-000,,,T1,lipkusuma-tif,2,WiFi-UB.x,c0:c7:0a:98:34:d1,5765,153,5,20,-68.0,,8,21.6,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:07,4,L4-000,,,T1,lipkusuma-tif,2,WiFi-UB.x,c0:c7:0a:98:3a:52,5180,36,5,20,-65.0,,1,1.2,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:07,4,L4-000,,,T1,lipkusuma-tif,2,FILKOM EVENT,c0:c7:0a:98:3a:51,5180,36,5,20,-70.0,,0,1.6,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:53:07,4,L4-000,,,T1,lipkusuma-tif,2,eduroam,c0:c7:0a:98:3a:50,5180,36,5,20,-69.0,,0,1.6,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:07,4,L4-000,,,T1,lipkusuma-tif,2,eduroam,c0:c7:0a:98:34:10,5220,44,5,20,-75.0,,0,6.7,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:07,4,L4-000,,,T1,lipkusuma-tif,2,eduroam,c0:c7:0a:98:34:d0,5765,153,5,20,-68.0,,0,21.6,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:07,4,L4-000,,,T1,lipkusuma-tif,2,eduroam,c0:c7:0a:98:38:b0,5805,161,5,20,-70.0,,0,2.0,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:07,4,L4-000,,,T1,lipkusuma-tif,2,eduroam,c0:c7:0a:58:34:d0,2462,11,2.4,20,-68.0,,0,5.9,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,APCobaX,74:4d:28:49:75:30,5280,56,5,40,-87.0,,,,WPA2-Personal,no,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,FILKOM EVENT,c0:c7:0a:58:34:d1,2462,11,2.4,20,-69.0,,0,5.9,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,eduroam,56:d9:e7:fb:0a:f1,2437,6,2.4,20,-92.0,,0,46.7,WPA2/3-Enterprise,no,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,FIB UB,80:2a:a8:3d:1b:47,2437,6,2.4,20,-84.0,,,,WPA2-Personal,no,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,,c8:5a:9f:ce:72:52,2427,4,2.4,20,-80.0,,0,0.0,WPA2-Personal,no,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,WiFi-UB.x,c0:c7:0a:98:34:11,5220,44,5,20,-68.0,,0,8.2,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,eduroam,c8:a6:08:8b:3e:00,5785,157,5,20,-83.0,,3,3.9,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,myECO_IR,ca:2b:96:1c:d9:5c,2412,1,2.4,20,-75.0,,,,Open,no,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,FILKOM EVENT,c0:c7:0a:98:34:d2,5765,153,5,20,-64.0,,1,42.0,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,myECO_LIDAR,de:4f:22:52:89:25,2412,1,2.4,20,-54.0,,,,Open,no,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,WiFi-UB.x,c0:c7:0a:58:34:d2,2462,11,2.4,20,-75.0,,0,8.2,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,WiFi-UB.x,c0:c7:0a:98:38:b1,5805,161,5,20,-69.0,,0,0.4,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,FILKOM EVENT,c0:c7:0a:98:34:12,5220,44,5,20,-75.0,,1,5.9,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,FILKOM EVENT,c0:c7:0a:98:38:b2,5805,161,5,20,-69.0,,0,0.4,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,WiFi-UB.x,c0:c7:0a:98:34:d1,5765,153,5,20,-64.0,,8,42.0,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,WiFi-UB.x,c0:c7:0a:98:3a:52,5180,36,5,20,-70.0,,1,1.6,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,FILKOM EVENT,c0:c7:0a:98:3a:51,5180,36,5,20,-68.0,,0,1.6,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,eduroam,c0:c7:0a:98:3a:50,5180,36,5,20,-67.0,,0,1.6,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,eduroam,c0:c7:0a:98:34:10,5220,44,5,20,-74.0,,0,5.9,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,eduroam,c0:c7:0a:98:34:d0,5765,153,5,20,-64.0,,0,42.0,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,eduroam,c0:c7:0a:98:38:b0,5805,161,5,20,-69.0,,0,0.4,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:16,4,L4-000,,,T1,lipkusuma-tif,3,eduroam,c0:c7:0a:58:34:d0,2462,11,2.4,20,-75.0,,0,8.2,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,APCobaX,74:4d:28:49:75:30,5280,56,5,40,-87.0,,,,WPA2-Personal,no,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,FILKOM EVENT,c0:c7:0a:58:34:d1,2462,11,2.4,20,-69.0,,0,5.9,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,eduroam,56:d9:e7:fb:0a:f1,2437,6,2.4,20,-92.0,,0,46.7,WPA2/3-Enterprise,no,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,FIB UB,80:2a:a8:3d:1b:47,2437,6,2.4,20,-84.0,,,,WPA2-Personal,no,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,,c8:5a:9f:ce:72:52,2427,4,2.4,20,-80.0,,0,0.0,WPA2-Personal,no,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,WiFi-UB.x,c0:c7:0a:98:34:11,5220,44,5,20,-68.0,,0,8.2,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,eduroam,c8:a6:08:8b:3e:00,5785,157,5,20,-83.0,,3,3.9,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,myECO_IR,ca:2b:96:1c:d9:5c,2412,1,2.4,20,-69.0,,,,Open,no,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,FILKOM EVENT,c0:c7:0a:98:34:d2,5765,153,5,20,-60.0,,1,24.3,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,myECO_LIDAR,de:4f:22:52:89:25,2412,1,2.4,20,-54.0,,,,Open,no,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,WiFi-UB.x,c0:c7:0a:58:34:d2,2462,11,2.4,20,-70.0,,0,9.0,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,WiFi-UB.x,c0:c7:0a:98:38:b1,5805,161,5,20,-66.0,,0,0.4,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,FILKOM EVENT,c0:c7:0a:98:34:12,5220,44,5,20,-78.0,,1,6.3,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,FILKOM EVENT,c0:c7:0a:98:38:b2,5805,161,5,20,-66.0,,0,0.4,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,WiFi-UB.x,c0:c7:0a:98:34:d1,5765,153,5,20,-60.0,,8,24.3,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,WiFi-UB.x,c0:c7:0a:98:3a:52,5180,36,5,20,-68.0,,1,0.8,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,FILKOM EVENT,c0:c7:0a:98:3a:51,5180,36,5,20,-74.0,,0,1.6,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,eduroam,c0:c7:0a:98:3a:50,5180,36,5,20,-73.0,,0,1.6,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,eduroam,c0:c7:0a:98:34:10,5220,44,5,20,-77.0,,0,6.3,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,eduroam,c0:c7:0a:98:34:d0,5765,153,5,20,-60.0,,0,24.3,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,eduroam,c0:c7:0a:98:38:b0,5805,161,5,20,-66.0,,0,0.4,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:25,4,L4-000,,,T1,lipkusuma-tif,4,eduroam,c0:c7:0a:58:34:d0,2462,11,2.4,20,-70.0,,0,9.0,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,APCobaX,74:4d:28:49:75:30,5280,56,5,40,-87.0,,,,WPA2-Personal,no,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,FILKOM EVENT,c0:c7:0a:58:34:d1,2462,11,2.4,20,-76.0,,0,9.0,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,eduroam,56:d9:e7:fb:0a:f1,2437,6,2.4,20,-92.0,,0,46.7,WPA2/3-Enterprise,no,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,FIB UB,80:2a:a8:3d:1b:47,2437,6,2.4,20,-84.0,,,,WPA2-Personal,no,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,,c8:5a:9f:ce:72:52,2427,4,2.4,20,-80.0,,0,0.0,WPA2-Personal,no,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,WiFi-UB.x,c0:c7:0a:98:34:11,5220,44,5,20,-68.0,,0,8.2,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,eduroam,c8:a6:08:8b:3e:00,5785,157,5,20,-83.0,,3,3.9,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,myECO_IR,ca:2b:96:1c:d9:5c,2412,1,2.4,20,-69.0,,,,Open,no,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,FILKOM EVENT,c0:c7:0a:98:34:d2,5765,153,5,20,-66.0,,1,21.2,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,myECO_LIDAR,de:4f:22:52:89:25,2412,1,2.4,20,-54.0,,,,Open,no,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,WiFi-UB.x,c0:c7:0a:58:34:d2,2462,11,2.4,20,-75.0,,0,9.0,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,WiFi-UB.x,c0:c7:0a:98:38:b1,5805,161,5,20,-67.0,,0,0.4,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,FILKOM EVENT,c0:c7:0a:98:34:12,5220,44,5,20,-82.0,,1,7.1,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,FILKOM EVENT,c0:c7:0a:98:38:b2,5805,161,5,20,-68.0,,0,0.4,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,WiFi-UB.x,c0:c7:0a:98:34:d1,5765,153,5,20,-65.0,,8,21.2,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,WiFi-UB.x,c0:c7:0a:98:3a:52,5180,36,5,20,-72.0,,1,0.8,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,FILKOM EVENT,c0:c7:0a:98:3a:51,5180,36,5,20,-71.0,,0,2.0,WPA2-Personal,capable,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,eduroam,c0:c7:0a:98:3a:50,5180,36,5,20,-70.0,,0,2.0,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,eduroam,c0:c7:0a:98:34:10,5220,44,5,20,-81.0,,0,7.1,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,eduroam,c0:c7:0a:98:34:d0,5765,153,5,20,-65.0,,0,21.2,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,eduroam,c0:c7:0a:98:38:b0,5805,161,5,20,-67.0,,0,0.4,WPA2/3-Enterprise,capable,kalibrasi
+2026-10-11T09:53:34,4,L4-000,,,T1,lipkusuma-tif,5,eduroam,c0:c7:0a:58:34:d0,2462,11,2.4,20,-75.0,,0,9.0,WPA2/3-Enterprise,capable,kalibrasi

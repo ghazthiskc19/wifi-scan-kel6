@@ -1,0 +1,14 @@
+titik_id,x_px,y_px,n_radio_terlihat,rssi1,rssi2,bssid1,radio1,channel1,width1,cci,snr,util1,sta1,status,penyebab_utama,penyebab
+L3-000,1200,460,10,-74.0,-78.8,fc:7f:f1:dd:53:30,fc:7f:f1:dd:53:30,64,40,0,,,,BURUK,cakupan lemah (RSSI<-70),cakupan lemah (RSSI<-70); tanpa AP cadangan (roaming)
+L3-007,700,388,3,-49.0,-75.0,e8:10:98:82:05:a0,e8:10:98:82:05:a0,157,40,0,,,,BAIK,,
+L3-008,796,374,6,-57.0,-66.9,e8:10:98:82:05:a0,e8:10:98:82:05:a0,157,40,0,,,,BAIK,,
+L3-009,940,374,6,-64.3,-65.7,fc:7f:f1:dd:53:30,fc:7f:f1:dd:53:30,64,40,0,,,,BAIK,,
+L3-010,1084,374,5,-43.0,-79.5,fc:7f:f1:dd:53:30,fc:7f:f1:dd:53:30,64,40,0,,,,PERHATIAN,tanpa AP cadangan (roaming),tanpa AP cadangan (roaming)
+L3-013,1084,540,11,-68.2,-77.0,fc:7f:f1:dd:53:30,fc:7f:f1:dd:53:30,64,40,0,,,,PERHATIAN,RSSI marginal,RSSI marginal; tanpa AP cadangan (roaming)
+L3-014,940,540,6,-77.0,-79.0,54:d7:e3:42:42:d0,54:d7:e3:42:42:d0,52,40,0,,,,BURUK,cakupan lemah (RSSI<-70),cakupan lemah (RSSI<-70); tanpa AP cadangan (roaming)
+L3-015,796,540,2,-77.0,-79.0,54:d7:e3:42:42:d0,54:d7:e3:42:42:d0,52,40,0,,,,BURUK,cakupan lemah (RSSI<-70),cakupan lemah (RSSI<-70); tanpa AP cadangan (roaming)
+L3-101,179,329,6,-63.3,-65.9,54:d7:e3:45:4c:90,54:d7:e3:45:4c:90,60,40,0,,,,BAIK,,
+L3-103,467,329,5,-40.0,-77.6,54:d7:e3:42:97:90,54:d7:e3:42:97:90,36,40,0,,,,PERHATIAN,tanpa AP cadangan (roaming),tanpa AP cadangan (roaming)
+L3-105,323,460,7,-56.9,-68.0,54:d7:e3:41:42:d0,54:d7:e3:41:42:d0,149,40,0,,,,BAIK,,
+L3-107,179,591,5,-57.5,-73.2,54:d7:e3:45:4c:90,54:d7:e3:45:4c:90,60,40,0,,,,BAIK,,
+L3-109,467,591,4,-77.0,-86.9,54:d7:e3:41:42:d0,54:d7:e3:41:42:d0,149,40,0,,,,BURUK,cakupan lemah (RSSI<-70),cakupan lemah (RSSI<-70); tanpa AP cadangan (roaming)

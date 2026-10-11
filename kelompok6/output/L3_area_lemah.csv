@@ -1,0 +1,4 @@
+area,jumlah_titik,titik,x_px,y_px,rssi_rata,status_terburuk,penyebab_dominan
+A1,1,L3-000,1200.0,460.0,-74.0,BURUK,cakupan lemah
+A2,2,"L3-014, L3-015",868.0,540.0,-77.0,BURUK,cakupan lemah
+A3,1,L3-109,467.0,591.0,-77.0,BURUK,cakupan lemah

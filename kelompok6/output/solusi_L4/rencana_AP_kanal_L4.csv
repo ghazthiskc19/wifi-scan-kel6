@@ -1,0 +1,11 @@
+ap,lokasi,x_px,y_px,status,kanal_sekarang,kanal_usulan,tx_power
+M1,F4.4,940,350,lama,36,48,tetap
+M2,F4.6 / kanan-atas,1119,309,lama,153,40,tetap
+M3,koridor bawah (F4.3/F4.5),1013,637,lama,161,161,tetap
+M4,F4.1,783,617,lama,44,149,tetap
+E1,Ext F4.14,179,329,lama,157,44,-6 dB
+E2,Ext F4.10,467,329,lama,40,157,tetap
+E3,Ext F4.13,179,591,lama,153,40,tetap
+E4,Ext F4.9,467,591,lama,48,48,tetap
+N1,F4.2 (kiri-atas),796,330,baru,,153,tetap
+N2,F4.8 (kanan-atas),960,190,baru,,36,tetap

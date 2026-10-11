@@ -1,42 +1,40 @@
 ﻿titik_id,lokasi,rssi_terkuat_dbm,kanal,bssid_terkuat,rssi_cadangan_dbm,jumlah_radio_WiFi-UB.x,catatan,laptop,waktu
 L4-000,"Hall sisi A (KALIBRASI, scan 5x)",-61,153,c0:c7:0a:98:34:d1,-63,12,"kalibrasi, hall",ghazy,2026-10-11T09:28:01
-L4-001,Sudut koridor kanan-atas,,,,,,,,BELUM DISCAN
-L4-002,"Koridor atas, sejajar kolom C",,,,,,,,BELUM DISCAN
-L4-003,F4.8 tengah,,,,,,,,BELUM DISCAN
-L4-004,"Koridor atas, sejajar kolom D",,,,,,,,BELUM DISCAN
-L4-005,R. Duduk atas,,,,,,,,BELUM DISCAN
-L4-006,Sudut koridor kiri-atas (dekat toilet),,,,,,,,BELUM DISCAN
-L4-007,"Koridor kiri, depan lift atas",,,,,,,,BELUM DISCAN
-L4-008,F4.2 tengah,,,,,,,,BELUM DISCAN
-L4-009,F4.4 tengah,,,,,,,,BELUM DISCAN
-L4-010,F4.6 tengah,,,,,,,,BELUM DISCAN
-L4-011,"Koridor kanan, sejajar baris 4",,,,,,,,BELUM DISCAN
-L4-012,"Koridor kanan, sejajar baris 3",,,,,,,,BELUM DISCAN
-L4-013,F4.5 tengah,,,,,,,,BELUM DISCAN
-L4-014,F4.3 tengah,,,,,,,,BELUM DISCAN
-L4-015,F4.1 tengah,,,,,,,,BELUM DISCAN
-L4-016,"Koridor kiri, depan lift bawah",,,,,,,,BELUM DISCAN
-L4-017,Sudut koridor kiri-bawah,,,,,,,,BELUM DISCAN
-L4-018,R. Duduk bawah,,,,,,,,BELUM DISCAN
-L4-019,"Koridor bawah, sejajar kolom D",,,,,,,,BELUM DISCAN
-L4-020,F4.7 tengah,,,,,,,,BELUM DISCAN
-L4-021,"Koridor bawah, sejajar kolom C",,,,,,,,BELUM DISCAN
-L4-022,Sudut koridor kanan-bawah,,,,,,,,BELUM DISCAN
-L4-101,Ext F4.14 tengah,,,,,,,,BELUM DISCAN
-L4-102,Ext F4.12 tengah,,,,,,,,BELUM DISCAN
-L4-103,Ext F4.10 tengah,,,,,,,,BELUM DISCAN
-L4-104,Koridor Ext ujung timur (dekat hall),,,,,,,,BELUM DISCAN
-L4-105,Koridor Ext tengah,,,,,,,,BELUM DISCAN
-L4-106,Koridor Ext ujung barat,,,,,,,,BELUM DISCAN
-L4-107,Ext F4.13 tengah,,,,,,,,BELUM DISCAN
-L4-108,Ext F4.11 tengah,,,,,,,,BELUM DISCAN
-L4-109,Ext F4.9 tengah,,,,,,,,BELUM DISCAN
-L4-201,"F4.1 pojok kiri-bawah (terjauh dari AP, dekat tangga); 2.9 m dari L4-017",,,,,,,,BELUM DISCAN
-L4-202,F4.4 sisi atas tengah (terjauh dari AP); 3.5 m dari L4-009,,,,,,,,BELUM DISCAN
-L4-203,F4.8 pojok kanan-atas (dekat jendela); 3.2 m dari L4-003,,,,,,,,BELUM DISCAN
-L4-204,F4.7 pojok kanan-bawah (dekat jendela); 3.2 m dari L4-020,,,,,,,,BELUM DISCAN
-L4-205,Ext F4.12 sisi atas tengah (terjauh dari AP); 3.4 m dari L4-102,,,,,,,,BELUM DISCAN
-L4-206,Ext F4.11 sisi bawah tengah (terjauh dari AP); 3.4 m dari L4-108,,,,,,,,BELUM DISCAN
-L4-207,"Tangga kanan-atas (bordes, dekat F4.8); 4.5 m dari L4-002",,,,,,,,BELUM DISCAN
-L4-208,"Tangga kanan-bawah (bordes, dekat F4.7); 4.7 m dari L4-021",,,,,,,,BELUM DISCAN
-L4-209,Tangga kiri-bawah (sebelah lift bawah); 3.5 m dari L4-017,,,,,,,,BELUM DISCAN
+L4-001,Sudut koridor kanan-atas,-51,153,c0:c7:0a:98:34:d1,-63,12,,rifqi,2026-10-11T10:43:32
+L4-002,"Koridor atas, sejajar kolom C",-56,153,c0:c7:0a:98:34:d1,-60,6,,rifqi,2026-10-11T10:35:26
+L4-003,F4.8 tengah,-59,153,c0:c7:0a:98:34:d1,-62,5,,rifqi,2026-10-11T10:36:40
+L4-004,"Koridor atas, sejajar kolom D",-57,36,c0:c7:0a:98:3a:52,-62,8,,rifqi,2026-10-11T10:34:46
+L4-005,R. Duduk atas,-59,36,c0:c7:0a:98:3a:52,-68,7,,rifqi,2026-10-11T10:34:01
+L4-006,Sudut koridor kiri-atas (dekat toilet),-69,153,c0:c7:0a:98:34:d1,-69,8,,rifqi,2026-10-11T10:31:57
+L4-007,"Koridor kiri, depan lift atas",-64,157,c8:a6:08:8b:3e:01,-65,9,,rifqi,2026-10-11T10:31:18
+L4-008,F4.2 tengah,-61,153,c0:c7:0a:98:34:d1,-63,8,,rifqi,2026-10-11T10:33:10
+L4-009,F4.4 tengah,-53,36,c0:c7:0a:98:3a:52,-56,8,,rifqi,2026-10-11T10:39:18
+L4-010,F4.6 tengah,-51,153,c0:c7:0a:98:34:d1,-53,8,,rifqi,2026-10-11T10:42:27
+L4-011,"Koridor kanan, sejajar baris 4",-56,153,c0:c7:0a:98:34:d1,-60,5,,rifqi,2026-10-11T10:06:39
+L4-012,"Koridor kanan, sejajar baris 3",-57,161,c0:c7:0a:98:38:b1,-60,6,,rifqi,2026-10-11T10:07:13
+L4-013,F4.5 tengah,-59,161,c0:c7:0a:98:38:b1,-61,6,,rifqi,2026-10-11T10:44:43
+L4-014,F4.3 tengah,-58,161,c0:c7:0a:98:38:b1,-60,7,,rifqi,2026-10-11T10:45:45
+L4-015,F4.1 tengah,-53,44,c0:c7:0a:98:34:11,-59,8,,rifqi,2026-10-11T10:47:49
+L4-016,"Koridor kiri, depan lift bawah",-59,44,c0:c7:0a:98:34:11,-60,9,,rifqi,2026-10-11T10:13:44
+L4-017,Sudut koridor kiri-bawah,-58,44,c0:c7:0a:98:34:11,-61,6,,rifqi,2026-10-11T10:12:30
+L4-018,R. Duduk bawah,-53,44,c0:c7:0a:98:34:11,-60,7,,rifqi,2026-10-11T10:11:50
+L4-019,"Koridor bawah, sejajar kolom D",-57,161,c0:c7:0a:98:38:b1,-57,6,,rifqi,2026-10-11T10:09:34
+L4-020,F4.7 tengah,-58,161,c0:c7:0a:98:38:b1,-60,5,,rifqi,2026-10-11T10:10:14
+L4-021,"Koridor bawah, sejajar kolom C",-49,161,c0:c7:0a:98:38:b1,-58,6,,rifqi,2026-10-11T10:08:49
+L4-022,Sudut koridor kanan-bawah,-59,161,c0:c7:0a:98:38:b1,-59,6,,rifqi,2026-10-11T10:07:54
+L4-101,Ext F4.14 tengah,-34,157,c8:a6:08:8b:3e:01,-64,8,,rifqi,2026-10-11T10:27:11
+L4-102,Ext F4.12 tengah,-42,157,c8:a6:08:8b:3e:01,-61,7,,rifqi,2026-10-11T10:23:27
+L4-103,Ext F4.10 tengah,-43,40,c0:c7:0a:98:3a:c1,-53,7,,rifqi,2026-10-11T10:18:47
+L4-104,Koridor Ext ujung timur (dekat hall),-50,157,c8:a6:08:8b:3e:01,-58,9,,rifqi,2026-10-11T10:18:05
+L4-105,Koridor Ext tengah,-46,157,c8:a6:08:8b:3e:01,-61,10,,rifqi,2026-10-11T10:20:57
+L4-106,Koridor Ext ujung barat,-41,157,c8:a6:08:8b:3e:01,-58,12,,rifqi,2026-10-11T10:25:28
+L4-107,Ext F4.13 tengah,-48,153,c8:a6:08:8b:1e:a1,-53,8,,rifqi,2026-10-11T10:26:13
+L4-108,Ext F4.11 tengah,-53,153,c8:a6:08:8b:1e:a1,-59,8,,rifqi,2026-10-11T10:21:47
+L4-109,Ext F4.9 tengah,-52,48,28:b3:71:ab:d3:91,-56,9,,rifqi,2026-10-11T10:16:34
+L4-201,"F4.1 pojok kiri-bawah (terjauh dari AP, dekat tangga); 2.9 m dari L4-017",-56,44,c0:c7:0a:98:34:11,-61,6,,rifqi,2026-10-11T10:50:01
+L4-202,F4.4 sisi atas tengah (terjauh dari AP); 3.5 m dari L4-009,-55,36,c0:c7:0a:98:3a:52,-61,9,,rifqi,2026-10-11T10:40:03
+L4-203,F4.8 pojok kanan-atas (dekat jendela); 3.2 m dari L4-003,-63,36,c0:c7:0a:98:3a:52,-68,5,,rifqi,2026-10-11T10:37:36
+L4-204,F4.7 pojok kanan-bawah (dekat jendela); 3.2 m dari L4-020,-57,161,c0:c7:0a:98:38:b1,-59,5,,rifqi,2026-10-11T10:11:04
+L4-205,Ext F4.12 sisi atas tengah (terjauh dari AP); 3.4 m dari L4-102,-49,157,c8:a6:08:8b:3e:01,-58,9,,rifqi,2026-10-11T10:24:37
+L4-206,Ext F4.11 sisi bawah tengah (terjauh dari AP); 3.4 m dari L4-108,-58,157,c8:a6:08:8b:3e:01,-58,10,,rifqi,2026-10-11T10:22:27
+L4-209,Tangga kiri-bawah (sebelah lift bawah); 3.5 m dari L4-017,-58,44,c0:c7:0a:98:34:11,-61,8,,rifqi,2026-10-11T10:13:05
