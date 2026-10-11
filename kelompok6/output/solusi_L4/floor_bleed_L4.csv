@@ -1,0 +1,8 @@
+radio,ssid,kanal,lantai_asal,titik_terkuat_asal,rssi_asal_kor,rssi_L4_titik_tegak_lurus,redaman_lantai_db,rssi_maks_L4,titik_maks_L4,n_titik_L4_terdengar,ikut_cci_L4
+00:e6:3a:50:e7:cc,FILKOM EVENT / WiFi-UB.x / eduroam,161,5,L5-010,-43.6,-53.0,9.4,-53.0,L4-010,3,0
+00:e6:3a:11:03:4c,FILKOM EVENT / eduroam,48,5,L5-014,-38.6,-64.9,26.3,-61.0,L4-017,8,0
+00:e6:3a:50:e7:4c,FILKOM EVENT / WiFi-UB.x / eduroam,40,5,L5-007,-38.6,-68.6,30.0,-61.0,L4-016,9,0
+00:e6:3a:51:03:4c,WiFi-UB.x,48,5,L5-014,-39.6,,,-61.0,L4-209,2,0
+54:d7:e3:42:97:90,WiFi-UB.x / eduroam,36,3,L3-103,-32.4,,,-81.0,L4-109,1,0
+34:8f:27:84:7c:9c,FKUB_HotSpot_Backup / WiFi-UB.x / eduroam,153,3,L3-013,-72.4,,,-81.0,L4-010,2,2
+b4:79:c8:ae:45:dc,FKUB_HotSpot / FKUB_HotSpot_Backup / WiFi-UB.x / eduroam,149,3,L3-013,-75.4,,,-81.5,L4-000,2,2

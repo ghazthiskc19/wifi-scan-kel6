@@ -1,0 +1,52 @@
+radio,kode_ap,ssid,kanal,lebar_mhz,kanal_terpakai,rssi_maks_L4,titik_L4,n_titik_L4_terdengar,rssi_maks_L3_kor,rssi_maks_L5_kor,kategori
+54:d7:e3:42:97:93,,FILKOM EVENT,36,40,36 40,-46.0,L4-109,1,-67.4,,AP kampus lain (bukan 8 AP L4)
+c0:c7:0a:98:3a:52,M1,FILKOM EVENT / WiFi-UB.x / eduroam,36,20,36,-46.9,L4-004,37,,-80.6,AP WiFi-UB.x lantai 4
+28:b3:71:93:a0:fc,,FILKOM EVENT / WiFi-UB.x / eduroam,36,20,36,-76.1,L4-205,3,,,AP kampus lain (bukan 8 AP L4)
+54:d7:e3:42:97:90,,WiFi-UB.x / eduroam,36,40,36 40,-81.0,L4-109,1,-32.4,,AP kampus dari lantai 3
+c0:c7:0a:98:33:70,,eduroam,36,20,36,-82.0,L4-107,1,,,AP kampus lain (bukan 8 AP L4)
+c0:c7:0a:98:3a:c1,E2,FILKOM EVENT / WiFi-UB.x / eduroam,40,20,40,-42.6,L4-103,27,,,AP WiFi-UB.x lantai 4
+00:e6:3a:50:e7:4c,,FILKOM EVENT / WiFi-UB.x / eduroam,40,20,40,-61.0,L4-016,9,,-38.6,AP kampus dari lantai 5
+00:e6:3a:90:eb:0c,,WiFi-UB.x / eduroam,40,20,40,-84.0,L4-000,1,,,AP kampus lain (bukan 8 AP L4)
+c0:c7:0a:98:34:11,M4,FILKOM EVENT / WiFi-UB.x / eduroam,44,20,44,-44.0,L4-015,39,,-73.6,AP WiFi-UB.x lantai 4
+00:e6:3a:10:b5:ac,,eduroam,44,20,44,-61.0,L4-001,1,,-72.6,AP kampus lain (bukan 8 AP L4)
+28:b3:71:ab:d3:91,E4,FILKOM EVENT / WiFi-UB.x / eduroam,48,20,48,-45.0,L4-109,34,-77.4,,AP WiFi-UB.x lantai 4
+00:e6:3a:11:03:4c,,FILKOM EVENT / eduroam,48,20,48,-61.0,L4-017,8,,-38.6,AP kampus dari lantai 5
+00:e6:3a:51:03:4c,,WiFi-UB.x,48,20,48,-61.0,L4-209,2,,-39.6,AP kampus dari lantai 5
+28:b3:71:af:48:e1,,WiFi-UB.x / eduroam,48,20,48,-82.0,L4-104,6,,,AP kampus lain (bukan 8 AP L4)
+fe:19:28:11:2d:3c,,(hotspot/SSID pribadi),48,20,48,-84.6,L4-000,1,,,"Jaringan lain (lab, hotspot, fakultas lain)"
+74:4d:28:49:75:30,,APCobaX,56,40,52 56,-82.0,L4-003,4,,-85.6,"Jaringan lain (lab, hotspot, fakultas lain)"
+46:6f:13:7c:55:67,,(hotspot/SSID pribadi),149,80,149 153 157 161,-35.0,L4-101,1,,,"Jaringan lain (lab, hotspot, fakultas lain)"
+ec:bd:1d:af:f6:7f,,FILKOM EVENT / WiFi-UB.x / eduroam,149,20,149,-75.8,L4-205,16,-81.4,-80.6,AP kampus lain (bukan 8 AP L4)
+80:03:84:18:c8:bc,,WiFi-UB.x,149,80,149 153 157 161,-80.0,L4-107,1,,,AP kampus lain (bukan 8 AP L4)
+76:a0:e9:65:9c:d7,,(hotspot/SSID pribadi),149,20,149,-80.5,L4-106,6,-82.4,,"Jaringan lain (lab, hotspot, fakultas lain)"
+b4:79:c8:ae:45:dc,,FKUB_HotSpot / FKUB_HotSpot_Backup / WiFi-UB.x / eduroam,149,40,149 153,-81.5,L4-000,2,-75.4,,AP kampus dari lantai 3
+34:8f:27:44:7c:7c,,FKUB_HotSpot / FKUB_HotSpot_Backup / WiFi-UB.x / eduroam,149,40,149 153,-83.9,L4-000,1,-81.4,,AP kampus lain (bukan 8 AP L4)
+c8:a6:08:8b:1e:a1,E3,FILKOM EVENT / WiFi-UB.x / eduroam,153,20,153,-48.4,L4-107,16,,,AP WiFi-UB.x lantai 4
+c0:c7:0a:98:34:d1,M2,FILKOM EVENT / WiFi-UB.x / eduroam,153,20,153,-50.0,L4-001,32,,,AP WiFi-UB.x lantai 4
+3c:46:a1:b9:ba:e2,,WiFi-UB / WiFi-UB.x / eduroam,153,20,153,-62.0,L4-011,8,-78.4,,AP kampus lain (bukan 8 AP L4)
+fc:5c:45:08:6f:7c,,FEB-UB / WiFi-UB.x,153,80,149 153 157 161,-62.0,L4-018,1,,,AP kampus lain (bukan 8 AP L4)
+00:e6:3a:11:15:8c,,eduroam,153,20,153,-64.0,L4-103,2,,-79.6,AP kampus lain (bukan 8 AP L4)
+3c:46:a1:bb:cd:92,,FKUB_HotSpot_Backup / WiFi-UB.x / eduroam,153,40,149 153,-80.0,L4-000,3,-82.4,,AP kampus lain (bukan 8 AP L4)
+34:8f:27:84:7c:9c,,FKUB_HotSpot_Backup / WiFi-UB.x / eduroam,153,20,153,-81.0,L4-010,2,-72.4,,AP kampus dari lantai 3
+c8:a6:08:8b:3e:01,E1,FILKOM EVENT / WiFi-UB.x / eduroam,157,20,157,-34.4,L4-101,35,-74.4,,AP WiFi-UB.x lantai 4
+c8:08:73:f0:44:9c,,FKUB_HotSpot_Backup,157,40,157 161,-61.0,L4-000,1,,,"Jaringan lain (lab, hotspot, fakultas lain)"
+80:03:84:9a:04:dc,,(hotspot/SSID pribadi),157,20,157,-67.0,L4-206,1,,,"Jaringan lain (lab, hotspot, fakultas lain)"
+a0:3d:6f:8b:0d:2c,,FILKOM EVENT,157,20,157,-69.8,L4-206,1,,,AP kampus lain (bukan 8 AP L4)
+d8:e8:44:74:ea:a5,,(hotspot/SSID pribadi),157,80,149 153 157 161,-76.0,L4-102,1,,,"Jaringan lain (lab, hotspot, fakultas lain)"
+80:03:84:19:07:3c,,FEB-UB / WiFi-UB.x / eduroam,157,80,149 153 157 161,-77.0,L4-017,6,,,AP kampus lain (bukan 8 AP L4)
+34:8f:27:44:98:ac,,WiFi-UB.x / eduroam,157,20,157,-77.7,L4-000,5,-84.4,,AP kampus lain (bukan 8 AP L4)
+58:d9:d5:b5:46:19,,AP-HOST,157,80,149 153 157 161,-78.5,L4-205,5,,,"Jaringan lain (lab, hotspot, fakultas lain)"
+4a:22:54:75:73:b0,,(hotspot/SSID pribadi),157,80,149 153 157 161,-79.5,L4-109,3,-83.4,,"Jaringan lain (lab, hotspot, fakultas lain)"
+48:22:54:15:73:b2,,ROBOTIIK,157,80,149 153 157 161,-79.9,L4-109,5,-81.4,,"Jaringan lain (lab, hotspot, fakultas lain)"
+80:03:84:1a:04:dc,,WiFi-UB.x / eduroam,157,20,157,-80.0,L4-206,1,,,AP kampus lain (bukan 8 AP L4)
+2c:ab:46:be:09:32,,FKUB_HotSpot_Backup / WiFi-UB.x / eduroam,157,40,157 161,-80.2,L4-000,2,-83.4,,AP kampus lain (bukan 8 AP L4)
+da:e8:44:44:ea:a5,,(hotspot/SSID pribadi),157,80,149 153 157 161,-81.0,L4-003,3,,,"Jaringan lain (lab, hotspot, fakultas lain)"
+c8:08:73:70:44:9c,,FKUB_HotSpot / WiFi-UB.x,157,40,157 161,-83.0,L4-000,1,,,AP kampus lain (bukan 8 AP L4)
+da:e8:44:14:ea:a5,,(hotspot/SSID pribadi),157,80,149 153 157 161,-83.0,L4-000,1,,,"Jaringan lain (lab, hotspot, fakultas lain)"
+c0:c7:0a:98:38:b1,M3,FILKOM EVENT / WiFi-UB.x / eduroam,161,20,161,-48.3,L4-021,35,,,AP WiFi-UB.x lantai 4
+00:e6:3a:50:e7:cc,,FILKOM EVENT / WiFi-UB.x / eduroam,161,20,161,-53.0,L4-010,3,,-43.6,AP kampus dari lantai 5
+94:b3:4f:bc:cb:81,,FILKOM EVENT / WiFi-UB.x / eduroam,161,20,161,-56.8,L4-104,9,,,AP kampus lain (bukan 8 AP L4)
+c6:79:81:b6:b9:c6,,(hotspot/SSID pribadi),161,80,149 153 157 161,-58.0,L4-102,2,,,"Jaringan lain (lab, hotspot, fakultas lain)"
+a0:3d:6f:8f:71:ac,,FILKOM EVENT,161,20,161,-65.0,L4-107,1,,-88.6,AP kampus lain (bukan 8 AP L4)
+a0:3d:6f:8f:71:ad,,eduroam,161,20,161,-73.0,L4-206,1,,,AP kampus lain (bukan 8 AP L4)
+c8:5a:9f:ce:72:54,,(hotspot/SSID pribadi),161,80,149 153 157 161,-85.0,L4-000,1,-80.4,,"Jaringan lain (lab, hotspot, fakultas lain)"
