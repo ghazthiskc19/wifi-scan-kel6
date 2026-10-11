@@ -97,6 +97,16 @@ python cek_laptop.py          # harus SEMUA LULUS, dalam keadaan konek WiFi-UB.x
 
 Urutannya: 101 → 102 → 103 → 104 → 105 → 106 → 107 → 108 → 109.
 
+**Titik tambahan (oranye, kotak di `denah/peta_titik_L4_rev.png`)**: pojok terjauh dari AP di ruang tanpa AP menurut Ruckus, plus tangga. Cetak peta `_rev` ini, bukan yang lama.
+
+| Titik | Lokasi | Dikerjakan |
+|---|---|---|
+| 201 / 202 / 203 / 204 | F4.1 pojok kiri-bawah / F4.4 sisi atas / F4.8 pojok kanan-atas / F4.7 pojok kanan-bawah | Tim 1 |
+| 205 / 206 | Ext F4.12 sisi atas / Ext F4.11 sisi bawah | Tim 2 |
+| 207 / 208 / 209 | Tangga kanan-atas / tangga kanan-bawah / tangga kiri-bawah (sebelah lift) | Tim 1 |
+
+`python survei.py --lantai 4 --device ghazy --point 201` dst.
+
 **L3 & L5 (Tim 2)**: 13 titik, **posisinya persis di bawah/atas titik L4 bernomor sama**:
 000, 007, 008, 009, 010, 013, 014, 015 (gedung utama) + 101, 103, 105, 107, 109 (Ext).
 Cari posisinya pakai kolom yang sama seperti di L4. Di L5 beberapa titik (008, 009, 010, 013) jatuh di ruang Kaprodi/dinding, jadi berdiri di koridor terdekat dan tulis di catatan.
