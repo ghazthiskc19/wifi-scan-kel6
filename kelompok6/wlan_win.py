@@ -156,9 +156,22 @@ class _Wlan:
         if rc != 0:
             raise OSError("%s gagal, kode %d" % (fn, rc))
 
-    def scan(self, wait=4.0):
+    def scan(self, wait=4.0, coba=5, min_bss=5):
         self._ok(self.api.WlanScan(self.h, byref(self.guid), None, None, None), "WlanScan")
         time.sleep(wait)  # driver wajib menyelesaikan scan dalam 4 detik
+        aps = self._bss_list()
+        # Sebagian driver (mis. Realtek) kadang mengosongkan daftar BSS sesaat sehingga hasilnya
+        # kosong/hanya 1-2 BSSID. Baca ulang (dan scan ulang sekali), ambil hasil terbanyak.
+        for k in range(coba):
+            if len(aps) >= min_bss:
+                break
+            if k == 2:
+                self._ok(self.api.WlanScan(self.h, byref(self.guid), None, None, None), "WlanScan")
+            time.sleep(1.5)
+            aps = max(aps, self._bss_list(), key=len)
+        return aps
+
+    def _bss_list(self):
         bl = POINTER(WLAN_BSS_LIST)()
         self._ok(self.api.WlanGetNetworkBssList(self.h, byref(self.guid), None, 3, 0, None,
                                                 byref(bl)), "WlanGetNetworkBssList")
